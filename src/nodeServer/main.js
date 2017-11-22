@@ -17,12 +17,14 @@ operator = new operator();
 
 //GET -> return all users
 app.get('/users', function (req, res) {
-  fs.readFile(__dirname + '/' + 'user.json', 'utf-8',function (err, data) {
-    operator.getAllUsers();
-    console.log(data);
-    res.end(data);
-  })
-  console.log("return user's list");
+  // fs.readFile(__dirname + '/' + 'user.json', 'utf-8',function (err, data) {
+  //   console.log(data);
+  //   res.end(data);
+  // });
+  var result = operator.getAllUsers();
+  console.log(result);
+  res.end(result);
+  console.log("return user's list \n");
 })
  
 //GET -> return one user by id

@@ -45,16 +45,21 @@ function operator() {
 
     //get all users
     this.getAllUsers = function () {
-        var sql = 'selcet * from ' + userta;
         connection.connect();
-        connection.query(sql, function (err, result) {
+        var sql = 'select * from user';
+        var resu;
+        connection.query(sql,function (err, results,fields) {
             if (err) {
                 console.log('get all uers wrong in sql \n' + err);
+                throw err;
                 return;
             }
-            return result;
+            resu = JSON.stringify(results.RowDataPacket);
+            console.log(results.RowDataPacket);
+            return results;
         });
         connection.end();
+        return resu;
     };
 
     /*
@@ -62,7 +67,7 @@ function operator() {
     *@describe  get one user by id
     *@params  id 
     */
-    function getUserById(id) {
+    this.getUserById = function (id) {
         var sql = 'select * from ' + userta + ' where id = ' + id;
         connection.connect();
         connection.query(sql, function (err, result) {
@@ -81,7 +86,7 @@ function operator() {
     *@params  id
     *@return user
     */
-    function delUserById(id) {
+this.delUserById = function(id) {
         var sql = 'delete from ' + userta + 'where id = ' + id;
         connection.connect();
         connection.query(sql, function (err, result) {
@@ -99,7 +104,7 @@ function operator() {
     *@params 
     *@return itemList
     */
-    function getAllItems() {
+    this.getAllItems = function() {
         var sql = 'select * from ' + itemta;
         connection.connect();
         connection.query(sql, function (err, result) {
@@ -117,7 +122,7 @@ function operator() {
     *@describe  get one item by id
     *@params  iid 
     */
-    function getItemById(iid) {
+    this.getItemById = function(iid) {
         var sql = 'select * from ' + itemta + ' where iid = ' + iid;
         connection.connect();
         connection.query(sql, function (err, result) {
