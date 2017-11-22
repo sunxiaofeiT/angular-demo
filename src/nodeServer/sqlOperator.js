@@ -1,23 +1,19 @@
+import { resolve } from 'path';
+
 /*
- *@author  孙鹏飞 
+ *@author  孙鹏飞、王腾
  *@name  sqlOperator
  *@describe  sql operator
  *@params  sql host,user,password,database
  *@date  2017-11-22
- *@version  1.0
+ *@version  2.0
  *@illustrate  数据库操作
  *@TODO  add user,change user's information,add item,delete item,change item information,delete manager,change manager information,add manager
  */
 
-function operator() {
-    var mysql = require('mysql');
-    var connection = mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: '',
-        database: 'web02',
-    })
+exports.operator = function() {
 
+    var connect = require('./sql');
     var userta = 'user';    //user属性包括：id, name, password, address, phone, money
     // create table user (
     //     id varchar(10) not null,
@@ -44,58 +40,69 @@ function operator() {
     //     primary key(mid));
 
     //get all users
-    this.getAllUsers = function () {
-        connection.connect();
-        var sql = 'select * from user';
-        var resu;
-        connection.query(sql,function (err, results,fields) {
+    function getAllUsers (){
+        var sql = 'select * from ' + userta;
+        connect.connect();
+        connect.query(sql,function(err,result){
             if (err) {
-                console.log('get all uers wrong in sql \n' + err);
-                throw err;
+                console.log('get all uers wrong in sql \n' + err );
                 return;
             }
-            resu = JSON.stringify(results.RowDataPacket);
-            console.log(results.RowDataPacket);
-            return results;
+            return JSON.stringify(result);
         });
-        connection.end();
-        return resu;
+        connect.end();
     };
 
     /*
-    *@name  getUserId
+    *@name  getUserById
     *@describe  get one user by id
     *@params  id 
     */
-    this.getUserById = function (id) {
+    function getUserById (id) {
         var sql = 'select * from ' + userta + ' where id = ' + id;
-        connection.connect();
-        connection.query(sql, function (err, result) {
-            if (err) {
+        connect.connect();
+        connect.query(sql,function(err,result) {
+            if(err) {
                 console.log('get one user wrong on sql\n' + err);
                 return;
             }
-            return result;
-        });
-        connection.end();
+            return JSON.stringify(result);
+        })
     }
 
+	/*
+    *@name  postUser
+    *@describe  add one new user
+    *@params  id, name, password, address, phone, money
+    */
+    function postUser (id, name, password, address, phone, money) {
+        var sql = 'insert into ' + userta + '(id, name, password, address, phone, money) values ' 
+		+ '(' + id + ',' + name + ',' + password + ',' + address + ',' + phone + ',' + money + ')';
+        connect.connect();
+        connect.query(sql,function(err,result) {
+            if(err) {
+                console.log('add one user wrong on sql\n' + err);
+                return;
+            }
+            return result;
+        })
+    }
+	
     /*
     *@name  delUserById
     *@describe  delete a user by id
     *@params  id
     *@return user
     */
-this.delUserById = function(id) {
+    function delUserById (id) {
         var sql = 'delete from ' + userta + 'where id = ' + id;
-        connection.connect();
-        connection.query(sql, function (err, result) {
-            if (err) {
+        connect.connect();
+        connect.query(sql,,function(err,result) {
+            if(err) {
                 console.log('')
             }
             return result;
-        });
-        connection.end();
+        })
     }
 
     /*
@@ -104,17 +111,16 @@ this.delUserById = function(id) {
     *@params 
     *@return itemList
     */
-    this.getAllItems = function() {
+    function getAllItems() {
         var sql = 'select * from ' + itemta;
-        connection.connect();
-        connection.query(sql, function (err, result) {
-            if (err) {
+        connect.connect();
+        connect.query(sql,function(err,result) {
+            if(err) {
                 console.log('get all the items wrong on sql\n' + err);
-                return;
+                return ;
             }
-            return result;
-        });
-        connection.end();
+            return JSON.stringify(result);
+        })
     }
 
     /*
@@ -122,18 +128,51 @@ this.delUserById = function(id) {
     *@describe  get one item by id
     *@params  iid 
     */
-    this.getItemById = function(iid) {
+    function getItemById (iid) {
         var sql = 'select * from ' + itemta + ' where iid = ' + iid;
-        connection.connect();
-        connection.query(sql, function (err, result) {
-            if (err) {
+        connect.connect();
+        connect.query(sql,function(err,result) {
+            if(err) {
                 console.log('get one item wrong on sql\n' + err);
                 return;
             }
+            return JSON.stringify(result);
+        })
+    }
+	
+	/*
+    *@name  postItem
+    *@describe  add one new item
+    *@params  iid, name, describe, price, number, class
+    */
+    function postItem (iid, name, describe, price, number, class) {
+        var sql = 'insert into ' + itemta + '(iid, name, describe, price, number, class) values ' 
+		+ '(' + iid + ',' + name + ',' + describe + ',' + price + ',' + number + ',' + class + ')';
+        connect.connect();
+        connect.query(sql,function(err,result) {
+            if(err) {
+                console.log('add one item wrong on sql\n' + err);
+                return;
+            }
             return result;
-        });
-        connection.end();
+        })
+    }
+	
+    /*
+    *@name  delItemById
+    *@describe  delete a item by id
+    *@params  id
+    *@return item
+    */
+    function delItemById (id) {
+        var sql = 'delete from ' + itemta + 'where id = ' + id;
+        connect.connect();
+        connect.query(sql,,function(err,result) {
+            if(err) {
+                console.log('')
+            }
+            return result;
+        })
     }
 };
 
-module.exports = operator;
