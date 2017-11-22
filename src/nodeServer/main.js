@@ -10,12 +10,15 @@
 var express = require('express');
 var app = express();
 var fs = require("fs");
-var querystring = require('querystring')
+var querystring = require('querystring');
 var bodyParser = require('body-parser');
- 
+var operator = require('./sqlOperator');
+operator = new operator();
+
 //GET -> return all users
 app.get('/users', function (req, res) {
   fs.readFile(__dirname + '/' + 'user.json', 'utf-8',function (err, data) {
+    operator.getAllUsers();
     console.log(data);
     res.end(data);
   })

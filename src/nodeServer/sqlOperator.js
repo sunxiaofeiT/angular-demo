@@ -1,5 +1,3 @@
-import { resolve } from 'path';
-
 /*
  *@author  孙鹏飞 
  *@name  sqlOperator
@@ -11,9 +9,15 @@ import { resolve } from 'path';
  *@TODO  add user,change user's information,add item,delete item,change item information,delete manager,change manager information,add manager
  */
 
-exports.operator = function() {
+function operator() {
+    var mysql = require('mysql');
+    var connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: '',
+        database: 'web02',
+    })
 
-    var connect = require('./sql');
     var userta = 'user';    //user属性包括：id, name, password, address, phone, money
     // create table user (
     //     id varchar(10) not null,
@@ -40,17 +44,17 @@ exports.operator = function() {
     //     primary key(mid));
 
     //get all users
-    function getAllUsers (){
+    this.getAllUsers = function () {
         var sql = 'selcet * from ' + userta;
-        connect.connect();
-        connect.query(sql,function(err,result){
+        connection.connect();
+        connection.query(sql, function (err, result) {
             if (err) {
-                console.log('get all uers wrong in sql \n' + err );
+                console.log('get all uers wrong in sql \n' + err);
                 return;
             }
             return result;
         });
-        connect.end();
+        connection.end();
     };
 
     /*
@@ -58,16 +62,17 @@ exports.operator = function() {
     *@describe  get one user by id
     *@params  id 
     */
-    function getUserById (id) {
+    function getUserById(id) {
         var sql = 'select * from ' + userta + ' where id = ' + id;
-        connect.connect();
-        connect.query(sql,function(err,result) {
-            if(err) {
+        connection.connect();
+        connection.query(sql, function (err, result) {
+            if (err) {
                 console.log('get one user wrong on sql\n' + err);
                 return;
             }
             return result;
-        })
+        });
+        connection.end();
     }
 
     /*
@@ -76,15 +81,16 @@ exports.operator = function() {
     *@params  id
     *@return user
     */
-    function delUserById (id) {
+    function delUserById(id) {
         var sql = 'delete from ' + userta + 'where id = ' + id;
-        connect.connect();
-        connect.query(sql,,function(err,result) {
-            if(err) {
+        connection.connect();
+        connection.query(sql, function (err, result) {
+            if (err) {
                 console.log('')
             }
             return result;
-        })
+        });
+        connection.end();
     }
 
     /*
@@ -95,14 +101,15 @@ exports.operator = function() {
     */
     function getAllItems() {
         var sql = 'select * from ' + itemta;
-        connect.connect();
-        connect.query(sql,function(err,result) {
-            if(err) {
+        connection.connect();
+        connection.query(sql, function (err, result) {
+            if (err) {
                 console.log('get all the items wrong on sql\n' + err);
-                return ;
+                return;
             }
             return result;
-        })
+        });
+        connection.end();
     }
 
     /*
@@ -110,16 +117,18 @@ exports.operator = function() {
     *@describe  get one item by id
     *@params  iid 
     */
-    function getItemById (iid) {
+    function getItemById(iid) {
         var sql = 'select * from ' + itemta + ' where iid = ' + iid;
-        connect.connect();
-        connect.query(sql,function(err,result) {
-            if(err) {
+        connection.connect();
+        connection.query(sql, function (err, result) {
+            if (err) {
                 console.log('get one item wrong on sql\n' + err);
                 return;
             }
             return result;
-        })
+        });
+        connection.end();
     }
 };
 
+module.exports = operator;
