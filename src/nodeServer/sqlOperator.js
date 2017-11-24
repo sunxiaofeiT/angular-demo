@@ -1,5 +1,3 @@
-import { resolve } from 'path';
-
 /*
  *@author  孙鹏飞、王腾
  *@name  sqlOperator
@@ -11,9 +9,16 @@ import { resolve } from 'path';
  *@TODO  add user,change user's information,add item,delete item,change item information,delete manager,change manager information,add manager
  */
 
-exports.operator = function() {
+var mysql = require('mysql');
+var connect = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'web02'
+});
 
-    var connect = require('./sql');
+function sqlOperator() {
+
     var userta = 'user';    //user属性包括：id, name, password, address, phone, money
     // create table user (
     //     id varchar(10) not null,
@@ -40,17 +45,20 @@ exports.operator = function() {
     //     primary key(mid));
 
     //get all users
-    function getAllUsers (){
+    this.getAllUsers = function (callback) {
         var sql = 'select * from ' + userta;
-        connect.connect();
-        connect.query(sql,function(err,result){
+        var re = '';
+        connect.query(sql, function (err, result) {
             if (err) {
-                console.log('get all uers wrong in sql \n' + err );
+                console.log('get all uers wrong in sql \n' + err);
                 return;
             }
-            return JSON.stringify(result);
+            re = JSON.stringify(result);
+            //return JSON.stringify(result);
+            callback(re);
+            //return 'dfdf';
         });
-        connect.end();
+        //return re;
     };
 
     /*
@@ -58,15 +66,14 @@ exports.operator = function() {
     *@describe  get one user by id
     *@params  id 
     */
-    function getUserById (id) {
+    this.getUserById = function (id,callback) {
         var sql = 'select * from ' + userta + ' where id = ' + id;
-        connect.connect();
-        connect.query(sql,function(err,result) {
-            if(err) {
+        connect.query(sql, function (err, result) {
+            if (err) {
                 console.log('get one user wrong on sql\n' + err);
                 return;
             }
-            return JSON.stringify(result);
+            callback(JSON.stringify(result));
         })
     }
 
@@ -75,32 +82,31 @@ exports.operator = function() {
     *@describe  add one new user
     *@params  id, name, password, address, phone, money
     */
-    function postUser (id, name, password, address, phone, money) {
-        var sql = 'insert into ' + userta + '(id, name, password, address, phone, money) values ' 
-		+ '(' + id + ',' + name + ',' + password + ',' + address + ',' + phone + ',' + money + ')';
-        connect.connect();
-        connect.query(sql,function(err,result) {
-            if(err) {
+    this.postUser = function (id, name, password, address, phone, money, callback) {
+        var sql = 'insert into ' + userta + '(id, name, password, address, phone, money) values '
+            + '(' + id + ',' + name + ',' + password + ',' + address + ',' + phone + ',' + money + ')';
+        connect.query(sql, function (err, result) {
+            if (err) {
                 console.log('add one user wrong on sql\n' + err);
                 return;
             }
-            return result;
+            callback(result);
         })
     }
-	
+
     /*
     *@name  delUserById
     *@describe  delete a user by id
     *@params  id
     *@return user
     */
-    function delUserById (id) {
+    this.delUserById = function (id,callback) {
         var sql = 'delete from ' + userta + 'where id = ' + id;
-        connect.connect();
-        connect.query(sql,,function(err,result) {
-            if(err) {
+        connect.query(sql, function (err, result) {
+            if (err) {
                 console.log('')
             }
+            callback(result);
             return result;
         })
     }
@@ -111,15 +117,14 @@ exports.operator = function() {
     *@params 
     *@return itemList
     */
-    function getAllItems() {
+    this.getAllItems = function (callback) {
         var sql = 'select * from ' + itemta;
-        connect.connect();
-        connect.query(sql,function(err,result) {
-            if(err) {
+        connect.query(sql, function (err, result) {
+            if (err) {
                 console.log('get all the items wrong on sql\n' + err);
-                return ;
+                return;
             }
-            return JSON.stringify(result);
+            callback(JSON.stringify(result));
         })
     }
 
@@ -128,51 +133,49 @@ exports.operator = function() {
     *@describe  get one item by id
     *@params  iid 
     */
-    function getItemById (iid) {
+    this.getItemById = function (iid,callback) {
         var sql = 'select * from ' + itemta + ' where iid = ' + iid;
-        connect.connect();
-        connect.query(sql,function(err,result) {
-            if(err) {
+        connect.query(sql, function (err, result) {
+            if (err) {
                 console.log('get one item wrong on sql\n' + err);
                 return;
             }
-            return JSON.stringify(result);
+            callback(JSON.stringify(result));
         })
     }
-	
+
 	/*
     *@name  postItem
     *@describe  add one new item
-    *@params  iid, name, describe, price, number, class
+    *@params  iid, name, describe, price, number, classificaton
     */
-    function postItem (iid, name, describe, price, number, class) {
-        var sql = 'insert into ' + itemta + '(iid, name, describe, price, number, class) values ' 
-		+ '(' + iid + ',' + name + ',' + describe + ',' + price + ',' + number + ',' + class + ')';
-        connect.connect();
-        connect.query(sql,function(err,result) {
-            if(err) {
+    this.postItem = function (iid, name, describe, price, number, classification, callback) {
+        var sql = 'insert into ' + itemta + '(iid, name, describe, price, number, class) values '
+            + '(' + iid + ',' + name + ',' + describe + ',' + price + ',' + number + ',' + classification + ')';
+        connect.query(sql, function (err, result) {
+            if (err) {
                 console.log('add one item wrong on sql\n' + err);
                 return;
             }
-            return result;
+            callback(result);
         })
     }
-	
+
     /*
     *@name  delItemById
     *@describe  delete a item by id
     *@params  id
     *@return item
     */
-    function delItemById (id) {
+    this.delItemById = function (id, callback) {
         var sql = 'delete from ' + itemta + 'where id = ' + id;
-        connect.connect();
-        connect.query(sql,,function(err,result) {
-            if(err) {
+        connect.query(sql, function (err, result) {
+            if (err) {
                 console.log('')
             }
-            return result;
+            callback(result);
         })
     }
 };
 
+module.exports = sqlOperator;

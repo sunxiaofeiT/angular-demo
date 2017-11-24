@@ -15,33 +15,28 @@ var bodyParser = require('body-parser');
 var operator = require('./sqlOperator');
 operator = new operator();
 
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
+
 //GET -> return all users
 app.get('/users', function (req, res) {
-  // fs.readFile(__dirname + '/' + 'user.json', 'utf-8',function (err, data) {
-  //   console.log(data);
-  //   res.end(data);
-  // });
-  var result = operator.getAllUsers();
-  console.log(result);
-  res.end(result);
-  console.log("return user's list \n");
+  operator.getAllUsers(function (result) {
+    console.log(result);
+    res.end(result);
+    console.log("already return user's list");
+  });
 })
  
 //GET -> return one user by id
 app.get('/user/:id',function(req, res) {
-  fs.readFile(__dirname + '/user.json', 'utf-8', function(err, data) {
-
-  data = JSON.parse(data);
-  var user = data['user' + req.params.id];
-  console.log(user);
-  res.end(JSON.stringify(user));
+  operator.getUserById(id,function(result){
+    console.log(result);
+    res.end(result)
+    console.log('already return a user');
   })
-  console.log('return a user');
 })
 
-app.use(bodyParser.urlencoded({
-  extended: true
-}))
 //POST -> add one user
 app.post('/adduser', function (req, res) {
   var userId = 'user' + req.params.id;
@@ -57,27 +52,18 @@ app.post('/adduser', function (req, res) {
       'id' : req.body.id,
     }
   }
-  fs.writeFile(__dirname + '/' + 'user.json' , JSON.stringify(newUser), function (err , data) {
-    res.writeHead(200, {'Content-Type': 'text/htmml; charset=utf-8'});
-    res.end(JSON.stringify(newUser));
+
+  operator.postUser(id, name, password, address, phone, money,function(result){
+    console.log(result);
+    console.log("Already add one user");
   })
-   console.log("add one user");
 })
 
 //DELETE -> delete one user by id
 app.delete('/deluser/:id', function (req, res) {
-  var id = req.params.id;
-  var cdata;
-  var duser;
-  fs.readFile(__dirname + '/' + 'user.json', 'utf-8', function(err, data) {
-    data = JSON.parse(data);
-    duser = data['user' + id]
-    delete data['user' + id];
-    cdata = data;
-  });
-  fs.writeFile(__dirname + '/user.json', JSON.stringify(cdata),function (err, data) {
-    console.log('delete user ' + id);
-    res.end(JSON.stringify(duser));
+  operator.delUserById(id,function(result) {
+    console.log(result);
+    console.log('Already delete a user');
   })
 })
 
