@@ -4,7 +4,7 @@
  *@describe  json server
  *@date  2017-11-21
  *@version  1.0
- *@illustrate  use the user.json file to complete the operation of user's, such as delete、add、get
+ *@illustrate  解析请求，完成数据库操作，返回请求的数据。
  */
 
 var express = require('express');
@@ -41,17 +41,13 @@ app.get('/user/:id',function(req, res) {
 app.post('/adduser', function (req, res) {
   var userId = 'user' + req.params.id;
   console.log(req.body)
-  //Todo
-  //解析req的内容，获取对应属性
-  var newUser = {
-    userId : {
-      'name' : req.body.name,
-      'password' : req.body.password,
-      'address' : req.body.address,
-      'phone' : req.body.phone,
-      'id' : req.body.id,
-    }
-  }
+  
+  //解析POST请求的body即req.body的内容，获取对应属性
+  var name = req.body.name;
+  var password = req.body.passwor;
+  var address = req.body.address;
+  var phone = req.body.phone;
+  var id = req.body.id;
 
   operator.postUser(id, name, password, address, phone, money,function(result){
     console.log(result);
@@ -66,6 +62,16 @@ app.delete('/deluser/:id', function (req, res) {
     console.log('Already delete a user');
   })
 })
+
+
+/*********************************************************************
+*TODO:
+*return all items
+*return one items  by id
+*add one item
+*delete one item by id
+*return one manager by id (管理员manager只用于查询验证，不设添加删除功能)
+*********************************************************************/
 
 
 var server = app.listen(8080, function () {
