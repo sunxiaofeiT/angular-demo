@@ -3,8 +3,8 @@
  *@name  sqlOperator
  *@describe  sql operator
  *@params  sql host,user,password,database
- *@date  2017-11-22
- *@version  2.0
+ *@date  2017-11-24
+ *@version  3.0
  *@illustrate  数据库操作
  *@TODO  add user,change user's information,add item,delete item,change item information,delete manager,change manager information,add manager
  */
@@ -37,7 +37,7 @@ function sqlOperator() {
     //     inumber varchar(20),
     //     iclass varchar(10),
     //     primary key(iid));
-    var mananagerta = 'manager';
+    var managerta = 'manager';
     // create table manager (
     //     mid varchar(10) not null,
     //     mname varchar(20) not null,
@@ -174,6 +174,22 @@ function sqlOperator() {
                 console.log('')
             }
             callback(result);
+        })
+    }
+	
+	/*
+    *@name  getManagerById
+    *@describe  get one manager by id
+    *@params  id 
+    */
+    this.getManagerById = function (id,callback) {
+        var sql = 'select * from ' + managerta + ' where id = ' + id;
+        connect.query(sql, function (err, result) {
+            if (err) {
+                console.log('get one manager wrong on sql\n' + err);
+                return;
+            }
+            callback(JSON.stringify(result));
         })
     }
 };
