@@ -20,3 +20,24 @@
 - PUT /collection/resource：返回完整的资源对象
 - PATCH /collection/resource：返回完整的资源对象
 - DELETE /collection/resource：返回一个空文档
+
+## 类说明
+
+- Item 物品类，即商店中的各种货物
+    - iid
+    - iname
+    - idescribe
+    - iprice 
+    - inumber
+    - iclass -> classification
+- user 用户类，普通购物者
+    - id 
+    - name 
+    - password 
+    - address 
+    - phone
+    - money 
+- manager 管理员类，可管理商品的增删改查
+    - mid
+    - mname
+    - mpsaaword

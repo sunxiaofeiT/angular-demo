@@ -22,4 +22,12 @@
 
 ## 项目运行环境
 
+### 前端使用 Angular 框架
+
+在src 目录下，使用命令 `ng server` 运行前端。
+
+### 后天使用 node.js 编写
+
+在 `nodeServer` 目录下，使用命令 `node main.js` 来启动后台服务端。
+
 ## 其他
