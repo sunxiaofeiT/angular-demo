@@ -1,3 +1,9 @@
-<p>
-  item-list works!
-</p>
+<h2>商品</h2>
+<hero-search></hero-search>
+<ul class="items">
+  <li *ngFor="let item of items"
+    [class.selected]="isSelected(item)"
+    (click)="onSelect(item)">
+    <span class="badge">{{ hero.id }}</span> {{ hero.name }}
+  </li>
+</ul>

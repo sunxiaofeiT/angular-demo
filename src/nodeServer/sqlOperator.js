@@ -12,9 +12,11 @@
 var mysql = require('mysql');
 var connect = mysql.createConnection({
     host: 'localhost',
+    port: 3306,
     user: 'root',
     password: '',
-    database: 'web02'
+    database: 'web02',
+    useConnectionPooling: true,
 });
 
 function sqlOperator() {
