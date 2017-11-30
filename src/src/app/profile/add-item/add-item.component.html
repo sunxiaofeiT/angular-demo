@@ -2,17 +2,23 @@
   <div>
     <!-- id不需要管理员定义，自动按顺序添加 -->
     <!-- <input [(ngModel)]="item.id"/> -->
-    <label>商品名称：</label>
-    <input type="text" placeholder="名称" #namer />
-    <label>商品价格：</label>
-    <input type="number" placeholder="单价" #pricer />
-    <label>商品库存：</label>
-    <input type="number" placeholder="数量" #countr />
-    <label>商品描述：</label>
-    <input type="text" placeholder="介绍" #descr />
-    <label>商品分类：</label>
-    <input type="text" placeholder="类别" #classificationr />
-    <button (click)="addItem(namer.value,pricer.value,countr.value,descr.value,classificationr.value)">确认增加此商品</button>
+	<br>
+    <div><label>商品名称：</label>
+    <input type="text" placeholder="名称" #namer /></div>
+	<br>
+    <div><label>商品价格：</label>
+    <input type="number" placeholder="单价" #pricer /></div>
+	<br>
+    <div><label>商品库存：</label>
+    <input type="number" placeholder="数量" #countr /></div>
+	<br>
+    <div><label>商品描述：</label>
+    <input type="text" placeholder="介绍" #descr /></div>
+	<br>
+    <div><label>商品分类：</label>
+    <input type="text" placeholder="类别" #classificationr /></div>
+	<br>
+    <div><button (click)="addItem(namer.value,pricer.value,countr.value,descr.value,classificationr.value)">确认增加此商品</button></div>
     <!-- <button (click)="addItem()">确认增加此商品</button> -->
   </div>
 </div>

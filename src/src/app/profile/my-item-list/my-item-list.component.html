@@ -1,17 +1,7 @@
-<h2>增加商品</h2>
-<div>
-  <label>商品名称：</label> <input #itemName />
-  <label>商品价格：</label> <input #price />
-  <label>商品数量：</label> <input #count />
-  <button (click)="addItem(itemName.value,pricr.value,count.value); 
-    itemName.value='';price.value='';count.value=''">
-    增加
-  </button>
-</div>
 <ul class="items">
   <li *ngFor="let item of items" (click)="onSelect(item)" [class.selected]="item === selectedItem">
-    <span class="badge">{{item.id}}</span>
+    <span>{{item.id}}</span>
     <span>{{item.name}}</span>
-    <button class="delete" (click)="deleteItem(item); $event.stopPropagation()">x</button>
+    <button class="delete" (click)="deleteItem(item); $event.stopPropagation()">删除</button>
   </li>
 </ul>
