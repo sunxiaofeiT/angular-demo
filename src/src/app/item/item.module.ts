@@ -1,6 +1,7 @@
 //import angular core
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule }  from '@angular/forms'; 
 //import my modules
 import { ItemRoutingModule } from './item-routing.module';
 //import my components
@@ -13,7 +14,8 @@ import { BuyItemComponent } from '../item/buy-item/buy-item.component';
 @NgModule({
   imports: [
     CommonModule,
-    ItemRoutingModule
+    ItemRoutingModule,
+    FormsModule
   ],
   declarations: [
     ItemComponent,
