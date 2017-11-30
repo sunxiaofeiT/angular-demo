@@ -18,11 +18,12 @@ export class AddItemComponent implements OnInit {
   count: number;
   price: number;
   classification: string;
-  
+
+  items: Item[];
   item: Item = {
-    id: UUID.UUID(),
+    id: 0,
     name: '',
-    desc:'',
+    desc: '',
     count: -1,
     price: -1,
     classification: '',
@@ -34,20 +35,18 @@ export class AddItemComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.itemService.getItems()
+      .then(items => {
+        this.items = items,
+        this.item.id = this.items[this.items.length-1].id + 1;
+      });
   }
 
-  addItem(name: string,price: number,count: number,desc: string,classification: string) {
-  // addItem() {
-    if(!name||!count||!price||!desc){
+  addItem(name: string, price: number, count: number, desc: string, classification: string) {
+    if (!name || !count || !price || !desc) {
       alert('请完善信息后，在确认增加');
       return;
-    }else{
-      console.log(name);
-      console.log(price);
-      console.log(count);
-      console.log(desc);
-      console.log(classification);
-      // console.log();
+    } else {
       this.item.name = name;
       this.item.desc = desc;
       this.item.count = count;
@@ -57,5 +56,5 @@ export class AddItemComponent implements OnInit {
       alert('增加商品成功！');
     }
   }
-  
+
 }

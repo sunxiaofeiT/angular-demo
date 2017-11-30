@@ -1,24 +1,27 @@
 <span>
-  <button (click)="goBack()"><i class="layui-icon">&#xe65c;</i> 返回</button>
+  <button (click)="goBack()">
+    <i class="layui-icon">&#xe65c;</i> 返回</button>
 </span>
 <div *ngIf="item">
   <div class="layui-form">
-  <table class="layui-table">
-  <thead>
-      <tr>
-        <th>商品编号</th>
-		<th>商品名称</th>
-        <th>商品描述</th>
-      </tr> 
-  </thead>
-  <tbody>
-      <tr>
-        <td>{{ item.id }}</td>
-		<td>{{ item.name }}</td>
-        <td>{{ item.desc }}</td>
-      </tr>
-  </tbody>
-  </table>
+    <table class="layui-table">
+      <thead>
+        <tr>
+          <th>商品编号</th>
+          <th>商品名称</th>
+          <th>商品价格</th>
+          <th>商品描述</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.desc }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <!-- 本意说明物品由哪个管理员添加
@@ -28,7 +31,6 @@
    -->
 
   <div>
-    <app-buy-item [item]= "item"></app-buy-item>
+    <app-buy-item [item]="item"></app-buy-item>
   </div>
 </div>
-

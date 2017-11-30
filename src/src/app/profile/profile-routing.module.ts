@@ -13,12 +13,12 @@ const routes: Routes = [
         component: ProfileComponent,
         children: [
             {
-                path:'',
-                component: ProfileDetailComponent
+                path:'add-item',
+                component: AddItemComponent
             },
             {
-                path:'profile-detail',
-                component: ProfileDetailComponent
+                path:'',
+                component: AddItemComponent
             },
             {
                 path:'my-item-list',
@@ -29,9 +29,9 @@ const routes: Routes = [
                 component: MyItemDetailComponent
             },
             {
-                path:'add-item',
-                component: AddItemComponent
-            }
+                path:'profile-detail',
+                component: ProfileDetailComponent
+            },
         ]
     }
 ];
