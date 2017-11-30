@@ -13,7 +13,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { CrisisCenterComponent } from './crisis-center/crisis-center.component';
+import { DealRecordComponent } from './deal-record/deal-record.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { CrisisCenterComponent } from './crisis-center/crisis-center.component';
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    CrisisCenterComponent,
+    DealRecordComponent,
 
   ],
   imports: [

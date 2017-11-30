@@ -7,14 +7,14 @@ import { ProfileModule } from './profile/profile.module';
 //import my components
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { CrisisCenterComponent } from './crisis-center/crisis-center.component';
+import { DealRecordComponent } from './deal-record/deal-record.component';
 //import my service
 import { AuthGuardService } from './service/auth-guard.service';
 
 const routes: Routes = [
     {
-        path: 'crisis-center',
-        component: CrisisCenterComponent
+        path: 'deal-record',
+        component: DealRecordComponent
     },
     {
         path: 'profile',

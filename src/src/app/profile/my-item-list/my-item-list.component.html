@@ -1,7 +1,10 @@
-<h2>My Items</h2>
+<h2>我增加的商品</h2>
 <div>
-  <label>Item name:</label> <input #itemName />
-  <button (click)="addItem(itemName.value); itemName.value=''">
+  <label>商品名称：</label> <input #itemName />
+  <label>商品价格：</label> <input #price />
+  <label>商品数量：</label> <input #count />
+  <button (click)="addItem(itemName.value,pricr.value,count.value); 
+    itemName.value='';price.value='';count.value=''">
     增加
   </button>
 </div>

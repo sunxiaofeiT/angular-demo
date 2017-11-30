@@ -1,8 +1,12 @@
 <div *ngIf="manager">
-  <h2> {{manager.id}}. {{manager.name}}</h2>
+  <h2> {{manager.name}}</h2>
   <div class = "items">
-    <label>Name:</label>
-    <input [(ngModel)]="manager.name" placeholder="Name" />
+    <label>名字：</label>
+    <input [(ngModel)]="manager.name" placeholder="Name" /><br/>
+    <label>账户名：</label>
+    <input [(ngModel)]="manager.username" placeholder="账户名" /><br/>
+    <label>密码：</label>
+    <input [(ngModel)]="manager.password" placeholder="密码" /><br/>
   </div>
   <button (click)="save()">Save</button>
 </div>
