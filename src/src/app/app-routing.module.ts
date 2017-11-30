@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 //import my mudules
 import { ItemModule } from './item/item.module';
 import { ProfileModule } from './profile/profile.module';
+import { DealRecordModule } from './deal-record/deal-record.module';
 //import my components
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -14,7 +15,8 @@ import { AuthGuardService } from './service/auth-guard.service';
 const routes: Routes = [
     {
         path: 'deal-record',    //销售记录
-        component: DealRecordComponent
+        canActivate: [AuthGuardService],
+        loadChildren: 'app/deal-record/deal-record.module#DealRecordModule'
     },
     {
         path: 'profile',    //个人中心

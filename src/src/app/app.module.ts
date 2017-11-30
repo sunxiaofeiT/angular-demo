@@ -8,12 +8,12 @@ import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { ItemModule } from './item/item.module';
 import { ProfileModule } from './profile/profile.module';
+import { DealRecordModule } from "./deal-record/deal-record.module";
 //import my components
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { DealRecordComponent } from './deal-record/deal-record.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,6 @@ import { DealRecordComponent } from './deal-record/deal-record.component';
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    DealRecordComponent,
 
   ],
   imports: [

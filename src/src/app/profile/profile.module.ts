@@ -1,7 +1,7 @@
 //import angular core
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule }    from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 //import my modules
 import { ProfileRoutingModule } from './profile-routing.module';
 //import my components
