@@ -1,24 +1,28 @@
-<h2>ITEMS</h2>
+<h2>商品详情</h2>
 <div *ngIf="item">
-  <h3>"{{ item.name }}"</h3>
+  <h3>{{ item.name }}</h3>
   <div class="items">
-    <label>Id: </label>{{ item.id }}
+    <label>商品编号：</label>{{ item.id }}
   </div>
   <div class="items">
-    <label>Name: </label>{{ item.name }}
+    <label>商品名称： </label>{{ item.name }}
   </div>
+
+  <!-- 商品不再需要Gender属性
   <div class="items">
     <label>Gender: </label>{{ item.gender }}
   </div>
+  -->
+
   <div class="items">
-    <label>My Honor: </label>{{ item.desc }}
+    <label>商品描述： </label>{{ item.desc }}
   </div>
 
-  <!-- 本意是说明英雄的属于那个user，现在说明物品由哪个管理员添加 -->
+  <!-- 本意说明物品由哪个管理员添加
   <div class="items" *ngIf="manager">
     <label>My Owner: </label>{{ manager.name }}
   </div>
-  <!--  -->
+   -->
 
 </div>
 <div>
