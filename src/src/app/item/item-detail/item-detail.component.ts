@@ -8,28 +8,28 @@ import 'rxjs/add/operator/switchMap';
 
 //import service
 import { ItemService } from '../../service/item.service';
-import { UserService } from '../../service/user.service';
+import { ManagerService } from '../../service/manager.service';
 
 //import class
 import { Item } from '../../domain/item';
-import { User } from '../../domain/user';
+import { Manager } from '../../domain/manager';
 
 @Component({
   selector: 'item-detail',
   templateUrl: './item-detail.component.html',
   styleUrls: ['./item-detail.component.css'],
-  providers: [ItemService, UserService]
+  providers: [ItemService, ManagerService]
 })
 export class ItemDetailComponent implements OnInit {
 
   item: Item;
-  user: User;
+  manager: Manager;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private itemService: ItemService,
-    private userService: UserService,
+    private managerService: ManagerService,
     private location: Location) { }
 
   ngOnInit(): void {
@@ -37,8 +37,8 @@ export class ItemDetailComponent implements OnInit {
       .switchMap((params: Params) => this.itemService.getItemById(+params['id']))
       .subscribe(item => {
         this.item = item;
-        this.userService.getUserById(item.ownerId)
-        .then(user => this.user = user);
+        this.managerService.getManagerById(item.ownerId)
+        .then(manager => this.manager = manager);
       });
   }
 

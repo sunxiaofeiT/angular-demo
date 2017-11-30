@@ -2,7 +2,7 @@
  * @author sunpengfei
  * @name profile component
  * @desc 概要描述
- * @param user
+ * @param manager个人中心
  */
 
 //import angular core
@@ -14,33 +14,33 @@ import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
 //import service
-import { UserService } from '../../service/user.service';
+import { ManagerService } from '../../service/manager.service';
 
 //import class
-import { User } from '../../domain/user';
+import { Manager } from '../../domain/manager';
 
 @Component({
   selector: 'profile-detail',
   templateUrl: './profile-detail.component.html',
   styleUrls: ['./profile-detail.component.css'],
-  providers: [UserService]
+  providers: [ManagerService]
 })
 export class ProfileDetailComponent implements OnInit {
 
-  user: User;
+  manager: Manager;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private userService: UserService) { }
+    private managerService: ManagerService) { }
 
   ngOnInit() {
-    this.userService.getUserById(<number><any>localStorage.getItem('userId'))
-      .then(user => this.user = user);
+    this.managerService.getManagerById(<number><any>localStorage.getItem('managerId'))
+      .then(manager => this.manager = manager);
   }
 
   save(): void{
-    this.userService.updateUser(this.user);
+    this.managerService.updateManager(this.manager);
   }
 
 }

@@ -7,25 +7,25 @@ import { Auth } from '../domain/auth';
 @Injectable()
 export class AuthService {
 
-  constructor(private http: Http, @Inject('user') private userService) { }
+  constructor(private http: Http, @Inject('manager') private managerService) { }
 
-  loginWithCredentials(username: string, password: string): Promise<Auth> {
-    return this.userService.getUserByUsername(username)  //调用UserService中的方法来查找user
-      .then(user => {
+  loginWithCredentials(managername: string, password: string): Promise<Auth> {
+    return this.managerService.getManagerByManagername(managername)  //调用managerService中的方法来查找manager
+      .then(manager => {
         let auth = new Auth();
-        localStorage.removeItem('userId');  //首先移除当前本地存储的userId
+        localStorage.removeItem('managerId');  //首先移除当前本地存储的ManagerId
         let redirectUrl = (localStorage.getItem('redirectUrl') === null) ?
           '/' : localStorage.getItem('redirectUrl');
         auth.redirectUrl = redirectUrl;      //存储原本要访问的Url
-        if (null === user) {
-          //没找到user
+        if (null === manager) {
+          //没找到manager
           auth.hasError = true;
-          auth.errMsg = 'user not found';
-        } else if (password === user.password) {
-          //找到user并与密码匹配成功
-          auth.user = Object.assign({}, user);
+          auth.errMsg = 'manager not found';
+        } else if (password === manager.password) {
+          //找到manager并与密码匹配成功
+          auth.manager = Object.assign({}, manager);
           auth.hasError = false;
-          localStorage.setItem('userId', user.id);
+          localStorage.setItem('managerId', manager.id);
         } else {
           //密码错误
           auth.hasError = true;

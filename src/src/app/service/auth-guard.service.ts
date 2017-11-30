@@ -12,7 +12,7 @@ export class AuthGuardService implements CanActivate {
   }
   checkLogin(url: string): boolean {
     //已登录
-    if (localStorage.getItem('userId') !== null) {
+    if (localStorage.getItem('managerId') !== null) {
       //返回true，放行
       return true;
     }

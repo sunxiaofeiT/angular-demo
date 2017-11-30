@@ -1,3 +1,9 @@
+/**
+ * @author 
+ * @component login
+ * @desc manager登录组件 （原为user登录界面）
+ */
+
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 

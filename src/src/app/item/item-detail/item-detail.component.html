@@ -14,9 +14,9 @@
     <label>My Honor: </label>{{ item.desc }}
   </div>
 
-  <!-- 本意是说明英雄的属于那个user，现要删除 -->
-  <div class="items" *ngIf="user">
-    <label>My Owner: </label>{{ user.name }}
+  <!-- 本意是说明英雄的属于那个user，现在说明物品由哪个管理员添加 -->
+  <div class="items" *ngIf="manager">
+    <label>My Owner: </label>{{ manager.name }}
   </div>
   <!--  -->
 

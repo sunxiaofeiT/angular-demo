@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 //import service
 import { AuthService } from '../service/auth.service';
-import { UserService } from '../service/user.service';
+import { ManagerService } from '../service/manager.service';
 import { AuthGuardService } from '../service/auth-guard.service';
 
 @NgModule({
@@ -13,7 +13,7 @@ import { AuthGuardService } from '../service/auth-guard.service';
     ],
     providers: [
         { provide: 'auth', useClass: AuthService },
-        { provide: 'user', useClass: UserService },
+        { provide: 'manager', useClass: ManagerService },
         AuthGuardService
     ]
 })

@@ -77,7 +77,7 @@ export class ItemService {
    * @param name 
    * @param ownerId 
    */
-  createItemByNameUserId(name: string, ownerId: number): Promise<Item> {
+  createItemByNameManagerId(name: string, ownerId: number): Promise<Item> {
     let item = {
       name: name,
       ownerId: ownerId

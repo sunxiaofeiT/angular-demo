@@ -30,7 +30,7 @@ export class MyItemListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.myId = <number><any>localStorage.getItem('userId');
+    this.myId = <number><any>localStorage.getItem('managerId');
     this.itemService.getItemsByOwnerId(this.myId)
       .then(items => this.items = items);
   }
@@ -38,7 +38,7 @@ export class MyItemListComponent implements OnInit {
   addItem(name: string): void {
     name = name.trim();
     if (!name) { return; }
-    this.itemService.createItemByNameUserId(name,this.myId)
+    this.itemService.createItemByNameManagerId(name,this.myId)
       .then(item => {
         this.items.push(item);
         this.selectedItem = null;

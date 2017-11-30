@@ -1,3 +1,9 @@
+/**
+ * @author sunpengfei 
+ * @component navbar 导航条
+ * @desc 顶部导航条，控制登录、注销、注册组件的显示与否
+ */
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  userId: number;
+  managerId: number;
 
   constructor() { }
 
@@ -15,13 +21,13 @@ export class NavbarComponent implements OnInit {
     const divLogin = document.getElementById('Login');
     const divLogout = document.getElementById('Logout');
     const divRegister = document.getElementById('Register');
-    this.userId = -1;
-    if(localStorage.getItem('userId') !== null){
+    this.managerId = -1;
+    if(localStorage.getItem('managerId') !== null){
      //已登录
      divLogin.style.display = 'none';
      divRegister.style.display='none';
      
-     this.userId = <number><any>localStorage.getItem('userId');
+     this.managerId = <number><any>localStorage.getItem('managerId');
 
     }
     else{
@@ -31,8 +37,8 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
-    localStorage.removeItem('userId');
-    this.userId = -1;
+    localStorage.removeItem('managerId');
+    this.managerId = -1;
     location.reload();
   }
 }
