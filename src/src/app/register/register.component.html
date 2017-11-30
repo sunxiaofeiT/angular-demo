@@ -1,15 +1,16 @@
 <!-- manager注册页面 -->
-
+<br>
 <div>
-    <h2>注册</h2>
     <div>
       <label class="mark">username: </label>
       <input [(ngModel)]="manager.username" placeholder="username" />
     </div>
+	<br>
     <div>
       <label class="mark">password: </label>
       <input  type = "password" [(ngModel)]="manager.password" placeholder="password" />
     </div>
     <button (click)="onSubmit()">Submit</button>
+	<button type="reset">Reset</button>
   </div>
   

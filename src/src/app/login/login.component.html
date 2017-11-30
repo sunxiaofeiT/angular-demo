@@ -9,12 +9,14 @@
         <label *ngIf="usernameRef.errors?.minlength">should be at least 3 charactors</label>
         <label *ngIf="auth?.hasError">{{auth.errMsg}}</label>
       </div>
+	  <br>
       <div>
         <label class ="mark">Password: </label>
         <input name="password" type="password" [(ngModel)]="password" #passwordRef="ngModel" required>
         <label *ngIf="passwordRef.errors?.required">this is required</label>
       </div>
       <button type="submit">Login</button>
+	  <button type="reset">Reset</button>
     </fieldset>
   </form>
 </div>
