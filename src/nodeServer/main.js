@@ -67,7 +67,7 @@ app.delete('/deluser/:id', function (req, res) {
 app.get('/items', function (req, res) {
   operator.getAllItems(function (result) {
     console.log(result);
-    res.end(result);
+    res.end(result,'utf-8');
     console.log("already return item's list");
   });
 })
@@ -114,6 +114,15 @@ app.get('/manager/:id',function(req, res) {
     console.log(result);
     res.end(result)
     console.log('already return a manager');
+  })
+})
+
+//GET -> return all managers
+app.get('/managers',function(req,res) {
+  operator.getAllManagers(function(result) {
+    console.log(result);
+    res.end(result);
+    console.log('already return all the managers');
   })
 })
 

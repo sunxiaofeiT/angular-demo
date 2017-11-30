@@ -1,0 +1,14 @@
+<h2>My Items</h2>
+<div>
+  <label>Item name:</label> <input #itemName />
+  <button (click)="addItem(itemName.value); itemName.value=''">
+    增加
+  </button>
+</div>
+<ul class="items">
+  <li *ngFor="let item of items" (click)="onSelect(item)" [class.selected]="item === selectedItem">
+    <span class="badge">{{item.id}}</span>
+    <span>{{item.name}}</span>
+    <button class="delete" (click)="deleteItem(item); $event.stopPropagation()">x</button>
+  </li>
+</ul>

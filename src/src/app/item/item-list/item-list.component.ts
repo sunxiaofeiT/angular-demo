@@ -34,11 +34,11 @@ export class ItemListComponent implements OnInit {
   }
 
   isSelected(item: Item){
-    return item.iid === this.selectedId;
+    return item.id === this.selectedId;
   }
 
   onSelect(item: Item){
-    this.router.navigate(['/hero-detail',item.iid]);
+    this.router.navigate(['/item-detail',item.id]);
   }
 
 

@@ -2,8 +2,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 //import my mudules
-import { ItemModule } from '../item/item.module';
-// import { ProfileModule } from './profile/profile.module';
+import { ItemModule } from './item/item.module';
+import { ProfileModule } from './profile/profile.module';
 //import my components
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -31,7 +31,7 @@ const routes: Routes = [
     },
     {
         path: '',
-        redirectTo: '/hero',
+        redirectTo: '/item',
         pathMatch: 'full'
     }
 ];

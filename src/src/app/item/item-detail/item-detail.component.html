@@ -1,0 +1,26 @@
+<h2>ITEMS</h2>
+<div *ngIf="item">
+  <h3>"{{ item.name }}"</h3>
+  <div class="items">
+    <label>Id: </label>{{ item.id }}
+  </div>
+  <div class="items">
+    <label>Name: </label>{{ item.name }}
+  </div>
+  <div class="items">
+    <label>Gender: </label>{{ item.gender }}
+  </div>
+  <div class="items">
+    <label>My Honor: </label>{{ item.desc }}
+  </div>
+
+  <!-- 本意是说明英雄的属于那个user，现要删除 -->
+  <div class="items" *ngIf="user">
+    <label>My Owner: </label>{{ user.name }}
+  </div>
+  <!--  -->
+
+</div>
+<div>
+  <button (click)="goBack()">Back</button>
+</div>

@@ -1,0 +1,14 @@
+<h2>HEROES</h2>
+<div>
+  <label>Crisis name:</label> <input #CrisisName />
+  <button (click)="addCrisis(CrisisName.value); CrisisName.value=''">
+    Add
+  </button>
+</div>
+<ul class="heroes">
+  <li *ngFor="let crisis of crisises"  [class.selected]="crisis === selectedCrisis">
+    <span class="badge">{{crisis.id}}</span>
+    <span>{{crisis.name}}</span>
+    <button class="delete" (click)="deleteCrisis(crisis); $event.stopPropagation()">x</button>
+  </li>
+</ul>

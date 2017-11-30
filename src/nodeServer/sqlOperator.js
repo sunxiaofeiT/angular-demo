@@ -17,6 +17,7 @@ var connect = mysql.createConnection({
     password: '',
     database: 'web02',
     useConnectionPooling: true,
+    charset:'UTF8_GENERAL_CI',
 });
 
 function sqlOperator() {
@@ -189,6 +190,22 @@ function sqlOperator() {
         connect.query(sql, function (err, result) {
             if (err) {
                 console.log('get one manager wrong on sql\n' + err);
+                return;
+            }
+            callback(JSON.stringify(result));
+        })
+    }
+
+    /**
+     * @name getAllManagers
+     * @description get all the managers
+     * @param 
+     */
+    this.getAllManagers = function (callback){
+        var sql = 'select * from ' + managerta;
+        connect.query(sql, function(err,result) {
+            if(err) {
+                console.log('get all the manager wrong on sql\n' + err);
                 return;
             }
             callback(JSON.stringify(result));

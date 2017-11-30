@@ -1,0 +1,19 @@
+<div *ngIf="item">
+  <h2>{{item.id}}. {{item.name}}</h2>
+  <div class = "items">
+    <label>Name:</label>
+    <input [(ngModel)]="item.name" placeholder="Name" />
+  </div>
+  <div class = "items">
+    <label>Gender:</label>
+    <select *ngIf="itemGenders" [(ngModel)]="item.gender" name = "gender" placeholder="gender">
+      <option *ngFor="let itemGender of itemGenders ">{{itemGender}}</option>
+    </select>
+  </div>
+  <div class = "items">
+    <label>Desc:</label>
+    <input [(ngModel)]="item.desc" placeholder="Description" />
+  </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+</div>

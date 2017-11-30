@@ -1,0 +1,12 @@
+<nav>
+  <a routerLink="/item" routerLinkActive="active" id="Item">商品item</a>
+  <a routerLink="/crisis-center" routerLinkActive="active" id="CrisisCenter">CrisisCenter</a>
+  <a routerLink="/profile" routerLinkActive="active" id="Profile">Profile</a>
+  <a routerLink="/login" routerLinkActive="active" id="Login">Login</a>
+  <a routerLink="/register" routerLinkActive="active" id="Register">Register</a>
+  <a (click)="logout()" id="Logout">Logout</a>
+</nav>
+
+<div>
+  <router-outlet></router-outlet>
+</div>

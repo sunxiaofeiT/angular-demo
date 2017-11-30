@@ -1,7 +1,7 @@
-import { Manager } from './manager';
+import { User } from './user';
 
 export class Auth {
-    manager: Manager;
+    user: User;
     hasError: boolean;
     errMsg: string;
     redirectUrl: string;

@@ -1,3 +1,11 @@
+/**
+ * @author sunpengfei 
+ * @name item service
+ * @desc item商品的服务
+ * @param api_url,headers
+ * @method 
+ */
+
 //import angular core
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
@@ -17,7 +25,7 @@ export class ItemService {
 
   constructor(private http: Http) { }
 
-  //查询所有item
+  //查询所有Item
   getItems(): Promise<Item[]> {
     const url = `${this.api_url}`;
     return this.http.get(url, { headers: this.headers })
@@ -26,7 +34,7 @@ export class ItemService {
       .catch(this.handleError);
   }
 
-  //按id查询item
+  //按id查询Item
   getItemById(id: number): Promise<Item> {
     const url = `${this.api_url}/${id}`;
     return this.http.get(url, { headers: this.headers })
@@ -35,8 +43,8 @@ export class ItemService {
       .catch(this.handleError);
   }
 
-  //按ownerId查询item
-  getItemesByOwnerId(ownerId: number): Promise<Item[]> {
+  //按ownerId查询Item
+  getItemsByOwnerId(ownerId: number): Promise<Item[]> {
     const url = `${this.api_url}/?ownerId=${ownerId}`;
     return this.http.get(url, { headers: this.headers })
       .toPromise()
@@ -51,7 +59,10 @@ export class ItemService {
       .map(response => response.json() as Item[]);
   }
 
-  //新建item
+  /**
+   * 新建item
+   * @param item 
+   */
   createItem(item: Item): Promise<Item> {
     const url = `${this.api_url}`;
     return this.http
@@ -61,7 +72,11 @@ export class ItemService {
       .catch(this.handleError);
   }
 
-  //按name与userId新建item
+  /**
+   * 新建item
+   * @param name 
+   * @param ownerId 
+   */
   createItemByNameUserId(name: string, ownerId: number): Promise<Item> {
     let item = {
       name: name,
@@ -75,9 +90,12 @@ export class ItemService {
       .catch(this.handleError);
   }
 
-  //修改item
+  /**
+   * 修改Item
+   * @param item 
+   */
   updateItem(item: Item): Promise<Item> {
-    const url = `${this.api_url}/${item.iid}`;
+    const url = `${this.api_url}/${item.id}`;
     return this.http
       .put(url, JSON.stringify(item), { headers: this.headers })
       .toPromise()
@@ -85,16 +103,22 @@ export class ItemService {
       .catch(this.handleError);
   }
 
-  //删除某个item
+  /**
+   * 删除Item
+   * @param heitemro 
+   */
   deleteItem(item: Item): Promise<void> {
-    const url = `${this.api_url}/${item.iid}`;
+    const url = `${this.api_url}/${item.id}`;
     return this.http.delete(url, { headers: this.headers })
       .toPromise()
       .then(() => null)
       .catch(this.handleError);
   }
 
-  //按id删除某个item
+  /**
+   * 删除一个item
+   * @param id 
+   */
   deleteItemById(id: number): Promise<void> {
     const url = `${this.api_url}/${id}`;
     return this.http.delete(url, { headers: this.headers })
