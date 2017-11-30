@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UUID } from 'angular2-uuid';
 
 import { Item } from '../../domain/item';
 import { ItemService } from '../../service/item.service';
@@ -19,7 +20,7 @@ export class AddItemComponent implements OnInit {
   classification: string;
   
   item: Item = {
-    id: 10,
+    id: UUID.UUID(),
     name: '',
     desc:'',
     count: -1,
@@ -29,7 +30,7 @@ export class AddItemComponent implements OnInit {
   }
 
   constructor(
-    private itemService: ItemService,
+    private itemService: ItemService
   ) { }
 
   ngOnInit() {
