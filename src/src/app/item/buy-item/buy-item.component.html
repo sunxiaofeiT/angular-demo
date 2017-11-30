@@ -1,13 +1,12 @@
 <div>
-  <div>填写数量，完成购买</div>
   <div>
     <!--  用户不需要填写商品ID，系统自动判定为当前详情的商品
     <labe>商品编号：</labe>
     <input #itemId [(ngModule)]="itemId" placeholder="商品编号"> 
     -->
-    <label>购买数量：</label>
+    <label>请填写购买数量：</label>
     <input type="text" [(ngModel)]="count" #itemNum placeholder="购买数量" />
     <div>注意：全场包邮，货到付款</div>
-    <button (click)="save(itemNum.value); itemNum.value=''">确认信息无误，点击完成购买</button>
+    <button class="layui-btn layui-btn-primary" (click)="save(itemNum.value); itemNum.value=''">确认购买</button>
   </div>
 </div>

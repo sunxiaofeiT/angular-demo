@@ -1,21 +1,24 @@
-<h2>商品详情</h2>
+<span>
+  <button (click)="goBack()"><i class="layui-icon">&#xe65c;</i> 返回</button>
+</span>
 <div *ngIf="item">
-  <h3>{{ item.name }}</h3>
-  <div class="items">
-    <label>商品编号：</label>{{ item.id }}
-  </div>
-  <div class="items">
-    <label>商品名称： </label>{{ item.name }}
-  </div>
-
-  <!-- 商品不再需要Gender属性
-  <div class="items">
-    <label>Gender: </label>{{ item.gender }}
-  </div>
-  -->
-
-  <div class="items">
-    <label>商品描述： </label>{{ item.desc }}
+  <div class="layui-form">
+  <table class="layui-table">
+  <thead>
+      <tr>
+        <th>商品编号</th>
+		<th>商品名称</th>
+        <th>商品描述</th>
+      </tr> 
+  </thead>
+  <tbody>
+      <tr>
+        <td>{{ item.id }}</td>
+		<td>{{ item.name }}</td>
+        <td>{{ item.desc }}</td>
+      </tr>
+  </tbody>
+  </table>
   </div>
 
   <!-- 本意说明物品由哪个管理员添加
@@ -29,6 +32,3 @@
   </div>
 </div>
 
-<div>
-  <button (click)="goBack()">Back</button>
-</div>
