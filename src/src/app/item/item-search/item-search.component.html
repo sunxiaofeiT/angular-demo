@@ -1,5 +1,5 @@
 <div id="search-component">
-  <h4>搜索商品</h4>
+  <span>搜索商品</span>
   <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
   <div>
     <div *ngFor="let item of items | async"

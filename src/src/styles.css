@@ -18,8 +18,7 @@ body {
 }
 
 body,
-input[text],
-button {
+input[text]{
   color: #888;
   font-family: Cambria, Georgia;
 }
@@ -29,25 +28,7 @@ a {
   cursor: hand;
 }
 
-button {
-  font-family: Arial;
-  background-color: #eee;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  cursor: hand;
-}
 
-button:hover {
-  background-color: #cfd8dc;
-}
-
-button:disabled {
-  background-color: #eee;
-  color: #aaa;
-  cursor: auto;
-}
 
 
 /* Navigation link styles */
@@ -69,7 +50,7 @@ nav ul li a {
     font-size: 14px;
     text-align: center;
     text-decoration: none;
-    color: #fff;    
+	color: #607D8B;
     font-family: Tahoma;
     outline: none;
 }

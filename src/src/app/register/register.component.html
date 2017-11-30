@@ -1,16 +1,20 @@
 <!-- manager注册页面 -->
 <br>
 <div>
+  <form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+    <fieldset ngModelGroup="login">
     <div>
-      <label class="mark">username: </label>
+      <label class="mark">用户名: </label>
       <input [(ngModel)]="manager.username" placeholder="username" />
     </div>
 	<br>
     <div>
-      <label class="mark">password: </label>
+      <label class="mark">密码: </label>
       <input  type = "password" [(ngModel)]="manager.password" placeholder="password" />
     </div>
-    <button (click)="onSubmit()">Submit</button>
-	<button type="reset">Reset</button>
-  </div>
+    <button class="layui-btn layui-btn-primary" (click)="onSubmit()">注册</button>
+	<button class="layui-btn layui-btn-primary" type="reset">清空</button>
+	</fieldset>
+  </form>
+ </div>
   
