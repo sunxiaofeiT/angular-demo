@@ -51,15 +51,27 @@ button:disabled {
 
 
 /* Navigation link styles */
+nav ul {
+    float:left;
+    margin: 0px;
+    padding: 0 0 0 0;
+    width: 920px;
+    list-style: none;
+}
+nav ul li {
+    display: inline;
+}
 
-nav a {
-  padding: 5px 10px;
-  text-decoration: none;
-  margin-right: 10px;
-  margin-top: 10px;
-  display: inline-block;
-  background-color: #eee;
-  border-radius: 4px;
+
+nav ul li a {
+    float: left;
+    padding: 11px 20px; 
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;    
+    font-family: Tahoma;
+    outline: none;
 }
 
 nav a:visited,
