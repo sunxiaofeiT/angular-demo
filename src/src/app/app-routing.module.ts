@@ -13,24 +13,24 @@ import { AuthGuardService } from './service/auth-guard.service';
 
 const routes: Routes = [
     {
-        path: 'deal-record',
+        path: 'deal-record',    //销售记录
         component: DealRecordComponent
     },
     {
-        path: 'profile',
+        path: 'profile',    //个人中心
         canActivate: [AuthGuardService],
         loadChildren: 'app/profile/profile.module#ProfileModule'
     },
     {
-        path: 'login',
+        path: 'login',  //登录 
         component: LoginComponent
     },
     {
-        path: 'register',
+        path: 'register',   //注册
         component: RegisterComponent
     },
     {
-        path: '',
+        path: '',   //重定向
         redirectTo: '/item',
         pathMatch: 'full'
     }
