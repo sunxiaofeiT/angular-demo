@@ -3,20 +3,20 @@
   <form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
     <fieldset ngModelGroup="login">
       <div>
-        <label class ="mark">Username: </label>
+        <label class ="mark">用户名: </label>
         <input name="username" type="text" [(ngModel)]="username" #usernameRef="ngModel" required minlength="3">
-        <label *ngIf="usernameRef.errors?.required">this is required</label>
+        <label *ngIf="usernameRef.errors?.required">请输入用户名</label>
         <label *ngIf="usernameRef.errors?.minlength">should be at least 3 charactors</label>
         <label *ngIf="auth?.hasError">{{auth.errMsg}}</label>
       </div>
 	  <br>
       <div>
-        <label class ="mark">Password: </label>
+        <label class ="mark">密码: </label>
         <input name="password" type="password" [(ngModel)]="password" #passwordRef="ngModel" required>
-        <label *ngIf="passwordRef.errors?.required">this is required</label>
+        <label *ngIf="passwordRef.errors?.required">请输入密码</label>
       </div>
-      <button type="submit">Login</button>
-	  <button type="reset">Reset</button>
+      <button type="submit" class="layui-btn layui-btn-primary">登录</button>
+	  <button type="reset" class="layui-btn layui-btn-primary">清空</button>
     </fieldset>
   </form>
 </div>

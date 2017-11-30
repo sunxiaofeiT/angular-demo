@@ -1,9 +1,8 @@
-<h2>商品列表</h2>
 <item-search></item-search>
 <ul class="items">
   <li *ngFor="let item of items"
     [class.selected]="isSelected(item)"
     (click)="onSelect(item)">
-    <span class="badge">{{ item.id }}</span> {{ item.name }}
+    <span>{{ item.id }}</span> {{ item.name }} 
   </li>
 </ul>
