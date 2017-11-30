@@ -47,6 +47,7 @@ export class AddItemComponent implements OnInit {
       console.log(desc);
       console.log(classification);
       // console.log();
+      this.item.name = name;
       this.item.desc = desc;
       this.item.count = count;
       this.item.classification = classification;
