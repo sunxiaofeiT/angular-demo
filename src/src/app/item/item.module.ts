@@ -8,6 +8,7 @@ import { ItemComponent } from './item.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { ItemSearchComponent } from './item-search/item-search.component';
+import { BuyItemComponent } from '../item/buy-item/buy-item.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { ItemSearchComponent } from './item-search/item-search.component';
     ItemListComponent,
     ItemDetailComponent,
     ItemSearchComponent,
+    BuyItemComponent,
   ]
 })
 export class ItemModule { }

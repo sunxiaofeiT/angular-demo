@@ -14,6 +14,8 @@ import { ManagerService } from '../../service/manager.service';
 import { Item } from '../../domain/item';
 import { Manager } from '../../domain/manager';
 
+import { BuyItemComponent } from '../buy-item/buy-item.component';
+
 @Component({
   selector: 'item-detail',
   templateUrl: './item-detail.component.html',
