@@ -6,7 +6,7 @@ import { ProfileComponent } from './profile.component';
 import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
 import { MyItemListComponent } from './my-item-list/my-item-list.component';
 import { MyItemDetailComponent} from './my-item-detail/my-item-detail.component';
-
+import { AddItemComponent } from './add-item/add-item.component';
 const routes: Routes = [
     {
         path: '',
@@ -27,6 +27,10 @@ const routes: Routes = [
             {
                 path:'my-item-detail/:id',
                 component: MyItemDetailComponent
+            },
+            {
+                path:'add-item',
+                component: AddItemComponent
             }
         ]
     }

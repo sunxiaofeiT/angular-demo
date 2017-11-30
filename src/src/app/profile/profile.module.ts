@@ -9,6 +9,7 @@ import { ProfileComponent } from './profile.component';
 import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
 import { MyItemListComponent } from './my-item-list/my-item-list.component';
 import { MyItemDetailComponent } from './my-item-detail/my-item-detail.component';
+import { AddItemComponent } from './add-item/add-item.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { MyItemDetailComponent } from './my-item-detail/my-item-detail.component
     ProfileComponent,
     ProfileDetailComponent,
     MyItemListComponent,
-    MyItemDetailComponent
+    MyItemDetailComponent,
+    AddItemComponent
   ]
 })
 export class ProfileModule { }
