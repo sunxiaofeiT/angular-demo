@@ -2,28 +2,26 @@ label {
     display: inline-block;
     width: 4em;
     margin-top: 1.5em;
+    font-size: 20px;
     color: #607D8B;
     font-weight: bold;
   }
-  input {
-    height: 2em;
+.message input {
+    height: 3em;
+    width: 20em;
     font-size: 1em;
     padding-left: .4em;
   }
-  button {
-    margin-top: 1em;
-    font-family: Arial;
-    background-color: #eee;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer; cursor: hand;
+  .profilemessage {
+    text-align: center;
+    margin-top: 4em;
   }
-  button:hover {
-    background-color: #cfd8dc;
-  }
-  button:disabled {
-    background-color: #eee;
-    color: #ccc; 
-    cursor: auto;
-  }
+.message {
+  margin-top: 4em;
+}
+
+#profilemessbtn {
+  margin-top: 6em;
+  width: 20em;
+  height: 3em;
+}

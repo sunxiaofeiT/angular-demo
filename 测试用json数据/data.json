@@ -7,7 +7,7 @@
       "desc": "名牌",
       "ownerId": "1",
       "price": 20,
-      "count": 50
+      "count": 40
     },
     {
       "id": 2,
@@ -87,7 +87,7 @@
       "id": 1,
       "managername": "user1",
       "password": "123456",
-      "name": "孙",
+      "name": "王小明",
       "username": " sun"
     },
     {

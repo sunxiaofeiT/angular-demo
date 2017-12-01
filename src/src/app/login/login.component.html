@@ -1,40 +1,42 @@
-<div class="brdiv"></div>
-<div class="layui-container">
-  <form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
-    <fieldset ngModelGroup="login">
-      <div class="layui-row">
-        <div class="layui-col-md3 layui-col-md-offset3">
-          <label class="mark">用户名: </label>
-          <input name="username" type="text" [(ngModel)]="username" #usernameRef="ngModel" required minlength="3">
-          <label *ngIf="usernameRef.errors?.required">请输入用户名</label>
-          <label *ngIf="usernameRef.errors?.minlength">至少3个字符</label>
-          <label *ngIf="auth?.hasError">{{auth.errMsg}}</label>
-        </div>
-      </div>
-      <br>
-      <div class="layui-row">
-        <div class="layui-col-md3 layui-col-md-offset3">
-          <label class="mark">密码: </label>
-          <input name="password" type="password" [(ngModel)]="password" #passwordRef="ngModel" required>
-        </div>
-      </div>
-      <div class="layui-row">
-        <div class="layui-col-md3 layui-col-md-offset3">
-          <label *ngIf="passwordRef.errors?.required">请输入密码</label>
-        </div>
-      </div>
-      <div class="brdiv"></div>
-      <div class="button layui-row">
-        <div class="layui-col-md3 layui-col-md-offset3">
-          <button type="reset" class="layui-btn layui-btn-normal">清空</button>
-        </div>
-      </div>
-      <br/>
-      <div class="button layui-row">
-        <div class="layui-col-md3 layui-col-md-offset3">
-          <button type="submit" class="layui-btn layui-btn-normal">登录</button>
+<div class="layui-anim layui-anim-up">
+
+  <div class="layui-container">
+    <form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+      <fieldset ngModelGroup="login">
+        <div class="layui-row">
+          <div class="layui-col-md3 layui-col-md-offset3">
+            <label class="mark">用户名: </label>
+            <input name="username" type="text" [(ngModel)]="username" #usernameRef="ngModel" required minlength="3">
+            <label *ngIf="usernameRef.errors?.required">请输入用户名</label>
+            <label *ngIf="usernameRef.errors?.minlength">至少3个字符</label>
+            <label *ngIf="auth?.hasError">{{auth.errMsg}}</label>
           </div>
         </div>
-    </fieldset>
-  </form>
+        <br>
+        <div class="layui-row">
+          <div class="layui-col-md3 layui-col-md-offset3">
+            <label class="mark">密码: </label>
+            <input name="password" type="password" [(ngModel)]="password" #passwordRef="ngModel" required>
+          </div>
+        </div>
+        <div class="layui-row">
+          <div class="layui-col-md3 layui-col-md-offset3">
+            <label *ngIf="passwordRef.errors?.required">请输入密码</label>
+          </div>
+        </div>
+        <div class="brdiv"></div>
+        <div class="button layui-row">
+          <div class="layui-col-md3 layui-col-md-offset3">
+            <button type="reset" class="layui-btn layui-btn-normal">清空</button>
+          </div>
+        </div>
+        <br/>
+        <div class="button layui-row">
+          <div class="layui-col-md3 layui-col-md-offset3">
+            <button type="submit" class="layui-btn layui-btn-normal">登录</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
 </div>

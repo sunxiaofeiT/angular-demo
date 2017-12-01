@@ -1,12 +1,27 @@
+#search-component {
+  text-align: center;
+  height: 5em;
+}
+
+#search-component span{
+  font-size: 21px;
+  color: #393D49;
+}
+
+.result {
+  text-align: center;
+}
+
 .search-result{
     border-bottom: 1px solid gray;
     border-left: 1px solid gray;
     border-right: 1px solid gray;
-    width:195px;
-    height: 16px;
-    padding: 5px;
+    width: 285px;
+    height: 20px;
     background-color: white;
     cursor: pointer;
+    margin-left: 34.5em;
+    z-index: 1;
   }
    
   .search-result:hover {
@@ -15,6 +30,8 @@
   }
    
   #search-box{
-    width: 200px;
-    height: 20px;
+    width: 300px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid #d2d2d2;
   }

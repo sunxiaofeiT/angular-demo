@@ -1,11 +1,12 @@
-<p>
-  item works!
-</p>
-<nav>
-  <a routerLink="/item-list" routerLinkActive="active" id="ItemList">商品列表</a>
-  <a routerLink="/item-detail" routerLinkActive="active" id="ItemDetail">商品详情</a>
-</nav>
+<div class="layui-anim layui-anim-up">
 
-<div>
-  <router-outlet></router-outlet>
+  <nav>
+    <a routerLink="/item-list" routerLinkActive="active" id="ItemList">商品列表</a>
+    <a routerLink="/item-detail" routerLinkActive="active" id="ItemDetail">商品详情</a>
+  </nav>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+
 </div>

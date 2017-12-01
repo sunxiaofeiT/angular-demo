@@ -1,8 +1,11 @@
-<item-search></item-search>
-<ul class="items">
-  <li *ngFor="let item of items"
-    [class.selected]="isSelected(item)"
-    (click)="onSelect(item)">
-    <span>{{ item.id }}</span> {{ item.name }} 
-  </li>
-</ul>
+<div class="layui-anim layui-anim-up">
+
+  <item-search></item-search>
+  <ul class="items">
+    <li *ngFor="let item of items" [class.selected]="isSelected(item)" (click)="onSelect(item)">
+      <div class="each">
+        <span>{{ item.id }}</span> {{ item.name }}
+      </div>
+    </li>
+  </ul>
+</div>

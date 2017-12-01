@@ -1,8 +1,10 @@
-<nav>
-  <a routerLink="/add-item" routerLinkActive="active" id="addItem">增加商品</a>
-  <a routerLink="/my-item-list" routerLinkActive="active" id="MyItem">已有商品</a>
-  <a routerLink="/profile-detail" routerLinkActive="active" id="ProfileDetail">个人信息修改</a>
-</nav>
+<div class="profilecomponent">
+  <nav>
+    <button class="layui-btn" routerLink="/add-item" routerLinkActive="active" id="addItem">增加商品</button>
+    <button class="layui-btn" routerLink="/my-item-list" routerLinkActive="active" id="MyItem">已有商品</button>
+    <button class="layui-btn" routerLink="/profile-detail" routerLinkActive="active" id="ProfileDetail">个人信息修改</button>
+  </nav>
+</div>
 
 <div>
   <router-outlet></router-outlet>

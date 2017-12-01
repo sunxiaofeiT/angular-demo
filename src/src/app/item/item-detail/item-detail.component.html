@@ -1,36 +1,40 @@
 <span>
-  <button (click)="goBack()">
+  <button (click)="goBack()" class="layui-btn layui-btn-normal">
     <i class="layui-icon">&#xe65c;</i> 返回</button>
 </span>
-<div *ngIf="item">
-  <div class="layui-form">
-    <table class="layui-table">
-      <thead>
-        <tr>
-          <th>商品编号</th>
-          <th>商品名称</th>
-          <th>商品价格</th>
-          <th>商品描述</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{ item.id }}</td>
-          <td>{{ item.name }}</td>
-          <td>{{ item.price }}</td>
-          <td>{{ item.desc }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<div class="layui-anim layui-anim-up">
+  <div *ngIf="item" class="allitems">
+    <div class="layui-form form">
+      <table class="layui-table" layui-size="lg">
+        <thead>
+          <tr>
+            <th>商品编号</th>
+            <th>剩余库存</th>
+            <th>商品名称</th>
+            <th>商品价格</th>
+            <th>商品描述</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.count }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.desc }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-  <!-- 本意说明物品由哪个管理员添加
-  <div class="items" *ngIf="manager">
-    <label>My Owner: </label>{{ manager.name }}
-  </div>
-   -->
+    <!-- 本意说明物品由哪个管理员添加
+    <div class="items" *ngIf="manager">
+      <label>My Owner: </label>{{ manager.name }}
+    </div>
+  -->
 
-  <div>
-    <app-buy-item [item]="item"></app-buy-item>
+    <div class="buydiv">
+      <app-buy-item [item]="item"></app-buy-item>
+    </div>
   </div>
 </div>

@@ -1,37 +1,56 @@
-.selected {
-  background-color: #CFD8DC !important;
-  color: white;
+.items .li {
+  text-align: center;
+  z-index: -1;
 }
-.heroes {
-  margin: 0 0 2em 0;
+
+.each {
+  padding-top: 2em;
+  text-align: center;
+  z-index: -1;
+}
+.items {
+  margin: 0 0 .5em 0;
   list-style-type: none;
   padding: 0;
-  width: 15em;
+  width: 80em;
 }
-.heroes li {
+
+.items li {
   cursor: pointer;
-  position: relative;
-  left: 0;
+  float: left;
   background-color: #EEE;
-  margin: .5em;
-  padding: .3em 0;
-  height: 1.6em;
+  color: #393D49;
+  border: 1px solid #1E9FFF;
+  /* margin: .5em;
+  padding: .3em 0; */
+  margin-left: 4em;
+  margin-top: 2em;
+  height: 5em;
+  width: 20em;
   border-radius: 4px;
 }
-.heroes li:hover {
+
+.items li:hover {
   color: #607D8B;
   background-color: #DDD;
   left: .1em;
 }
-.heroes li.selected:hover {
-  background-color: #BBD8DC !important;
+
+.items li.selected {
+  background-color: #CFD8DC;
   color: white;
 }
-.heroes .text {
+
+.items li.selected:hover {
+  background-color: #BBD8DC;
+}
+
+.items .text {
   position: relative;
   top: -3px;
 }
-.heroes .badge {
+
+.items .badge {
   display: inline-block;
   font-size: small;
   color: white;
@@ -44,23 +63,4 @@
   height: 1.8em;
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
-}
-button {
-  font-family: Arial;
-  background-color: #eee;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  cursor: hand;
-}
-button:hover {
-  background-color: #cfd8dc;
-}
-button.delete {
-  float:right;
-  margin-top: 2px;
-  margin-right: .8em;
-  background-color: gray !important;
-  color:white;
 }

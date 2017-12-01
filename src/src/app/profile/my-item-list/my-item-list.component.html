@@ -1,7 +1,7 @@
-<ul class="items">
+<ul class="items flaotitem layui-anim layui-anim-up">
   <li *ngFor="let item of items" (click)="onSelect(item)" [class.selected]="item === selectedItem">
     <span>{{item.id}}</span>
     <span>{{item.name}}</span>
-    <button class="delete" (click)="deleteItem(item); $event.stopPropagation()">删除</button>
+    <button class="delete" (click)="deleteItem(item); $event.stopPropagation()"><i class="layui-icon">&#xe640;</i></button>
   </li>
 </ul>
