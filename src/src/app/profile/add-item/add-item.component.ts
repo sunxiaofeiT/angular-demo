@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UUID } from 'angular2-uuid';
 
 import { Item } from '../../domain/item';
 import { ItemService } from '../../service/item.service';
