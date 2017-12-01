@@ -64,21 +64,21 @@
       "ownerId": 1
     },
     {
-      "id": 8,
-      "name": "哈哈",
-      "desc": "的说法发的撒女充分",
-      "count": "545",
-      "price": "456",
-      "classification": "实物",
-      "ownerId": 1
-    },
-    {
       "id": 9,
       "name": "水杯",
       "desc": "啥发的说法是范德萨离开了",
       "count": "180",
       "price": "25",
       "classification": "生活用品",
+      "ownerId": 1
+    },
+    {
+      "id": 10,
+      "name": "篮球鞋",
+      "desc": "特别好特别师傅的说法",
+      "count": "485",
+      "price": "596",
+      "classification": "穿",
       "ownerId": 1
     }
   ],
