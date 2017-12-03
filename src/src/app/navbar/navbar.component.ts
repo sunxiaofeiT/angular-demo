@@ -1,5 +1,5 @@
 /**
- * @author sunpengfei 
+ * @author 
  * @component navbar 导航条
  * @desc 顶部导航条，控制登录、注销、注册组件的显示与否
  */
