@@ -1,15 +1,6 @@
 {
   "items": [
     {
-      "id": 1,
-      "name": "笔记本",
-      "classification": "办公用品",
-      "desc": "名牌",
-      "ownerId": "1",
-      "price": 20,
-      "count": 30
-    },
-    {
       "id": 2,
       "name": "笔记本电脑",
       "classification": "办公用品",
