@@ -21,11 +21,13 @@ export class NavbarComponent implements OnInit {
     const divLogin = document.getElementById('Login');
     const divLogout = document.getElementById('Logout');
     const divRegister = document.getElementById('Register');
+	const divItem = document.getElementById('Item');
     this.managerId = -1;
     if(localStorage.getItem('managerId') !== null){
      //已登录
      divLogin.style.display = 'none';
      divRegister.style.display='none';
+	 divItem.style.display='none';
      
      this.managerId = <number><any>localStorage.getItem('managerId');
 

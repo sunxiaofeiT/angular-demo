@@ -33,7 +33,7 @@ const routes: Routes = [
     },
     {
         path: '',   //重定向
-        redirectTo: '/item',
+        redirectTo: '/profile',
         pathMatch: 'full'
     }
 ];
