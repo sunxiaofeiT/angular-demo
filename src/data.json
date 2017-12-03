@@ -7,7 +7,7 @@
       "desc": "名牌",
       "ownerId": "1",
       "price": 20,
-      "count": 50
+      "count": 49
     },
     {
       "id": 2,
@@ -32,7 +32,7 @@
       "name": "鼠标",
       "classification": "电子",
       "desc": "机械手鼠标，非常好用",
-      "ownerId": "2",
+      "ownerId": "1",
       "price": 200,
       "count": 40
     },
@@ -41,7 +41,7 @@
       "name": "签字笔",
       "classification": "办公",
       "desc": "非常顺畅，能用3年，用过的人都说好",
-      "ownerId": "2",
+      "ownerId": "1",
       "price": 26,
       "count": 50
     },
@@ -50,9 +50,18 @@
       "name": "A4打印纸",
       "classification": "办公 ",
       "desc": "非常白，纸的颜色很好看，打出的字非常清晰",
-      "ownerId": "2",
+      "ownerId": "1",
       "price": 20,
       "count": 50
+    },
+    {
+      "id": 7,
+      "name": "牙刷",
+      "desc": "无",
+      "count": "12",
+      "price": "5",
+      "classification": "日用品",
+      "ownerId": 1
     }
   ],
   "managers": [
