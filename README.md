@@ -26,3 +26,9 @@
 
 -  软件测试
      -  由王腾和孙鹏飞负责
+
+## 代码运行方法
+     -  1、进入src目录。
+     -  2、使用npm install补上依赖包。也可以把之前备份的node_modules目录复制一份在src目录下。
+     -  3、使用json-server data.json启动后端服务。
+     -  4、使用npm start运行项目，打开浏览器访问http://localhost:4200/进入项目。
