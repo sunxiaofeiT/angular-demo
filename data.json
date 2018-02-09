@@ -1,6 +1,15 @@
 {
   "items": [
     {
+      "id": 1,
+      "name": "笔记本",
+      "classification": "办公用品",
+      "desc": "名牌",
+      "ownerId": "1",
+      "price": 20,
+      "count": 49
+    },
+    {
       "id": 2,
       "name": "笔记本电脑",
       "classification": "办公用品",
@@ -23,7 +32,7 @@
       "name": "鼠标",
       "classification": "电子",
       "desc": "机械手鼠标，非常好用",
-      "ownerId": "2",
+      "ownerId": "1",
       "price": 200,
       "count": 40
     },
@@ -32,7 +41,7 @@
       "name": "签字笔",
       "classification": "办公",
       "desc": "非常顺畅，能用3年，用过的人都说好",
-      "ownerId": "2",
+      "ownerId": "1",
       "price": 26,
       "count": 50
     },
@@ -41,39 +50,18 @@
       "name": "A4打印纸",
       "classification": "办公 ",
       "desc": "非常白，纸的颜色很好看，打出的字非常清晰",
-      "ownerId": "2",
+      "ownerId": "1",
       "price": 20,
       "count": 50
     },
     {
       "id": 7,
-      "name": "手机",
-      "desc": "说的法法师法",
-      "count": "10",
-      "price": "5000",
-      "classification": "电子",
+      "name": "牙刷",
+      "desc": "无",
+      "count": "12",
+      "price": "5",
+      "classification": "日用品",
       "ownerId": 1
-    },
-    {
-      "id": 9,
-      "name": "水杯",
-      "desc": "啥发的说法是范德萨离开了",
-      "count": "180",
-      "price": "25",
-      "classification": "生活用品",
-      "ownerId": 1
-    },
-    {
-      "id": 10,
-      "name": "篮球鞋",
-      "desc": "特别好特别师傅的说法",
-      "count": "485",
-      "price": "596",
-      "classification": "穿",
-      "ownerId": 1
-    },
-    {
-      "id": 11
     }
   ],
   "managers": [
@@ -81,7 +69,7 @@
       "id": 1,
       "managername": "user1",
       "password": "123456",
-      "name": "王小明",
+      "name": "孙",
       "username": " sun"
     },
     {
