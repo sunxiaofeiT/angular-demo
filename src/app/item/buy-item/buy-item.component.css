@@ -1,0 +1,18 @@
+.innerbuydiv {
+    font-size: 15px;
+    text-align: center;
+}
+.innerbuydiv .buytext {
+    margin-top: 1em;
+    font-size: 30px; 
+}
+.zhuyi {
+    margin-top: 1em;
+}
+.innerbuydiv .buybutton {
+    margin-top: 4em;
+}
+
+.innerbuydiv .buybutton button{
+    width: 14em;
+}
