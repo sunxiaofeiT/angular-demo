@@ -28,14 +28,30 @@ export class BuyItemComponent implements OnInit {
     //.then(item => this.manager = item);
   }
 
-  save(buyNum: number): void {
-    if (!buyNum || buyNum < 1) {
+  saveAdd(addNum: number): void {
+    if (!addNum || addNum < 1) {
       alert('请填写数量至少为 1 ！');
       return;
     } else {
-      this.item.count -= this.count;
+      this.item.count = this.item.count*1 +  this.count*1;
       this.updateItemCount(this.item);
-      alert('购买成功，请耐心等待送达');
+      // alert('修改成功！');
+    }
+  }
+
+  saveSub(subNum: number):void {
+    if (!subNum || subNum < 1) {
+      alert('请检查修改数量，至少为1！');
+      return;
+    } else {
+      this.item.count -= this.count*1;
+      if (this.item.count < 0) {
+        alert('库存不足，请检查！');
+        this.item.count += this.count*1;
+      } else {
+        this.updateItemCount(this.item);
+        // alert('修改成功！');
+      }
     }
   }
 

@@ -1,12 +1,12 @@
 <div *ngIf="manager" class="layui-anim layui-anim-up profilemessage">
   <h2> {{manager.name}}</h2>
   <div class="message">
-    <label>名字：</label>
+    <label>名&emsp;字：</label>
     <input [(ngModel)]="manager.name" placeholder="Name" /><br/>
     <label>账户名：</label>
     <input [(ngModel)]="manager.username" placeholder="账户名" /><br/>
-    <label>密码：</label>
+    <label>密&emsp;码：</label>
     <input [(ngModel)]="manager.password" placeholder="密码" /><br/>
   </div>
   <button class="layui-btn layui-btn-normal" id="profilemessbtn" (click)="save()">Save</button>
-</div>
+</div> 

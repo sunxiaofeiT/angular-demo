@@ -4,13 +4,17 @@
     <labe>商品编号：</labe>
     <input #itemId [(ngModule)]="itemId" placeholder="商品编号"> 
     -->
-    <label classs="buytext">请填写购买数量：</label>
-    <input class="layui-input" type="text" [(ngModel)]="count" #itemNum placeholder="购买数量" />
+    <label classs="buytext">请填写修改数量：</label>
+    <input class="layui-input" type="text" [(ngModel)]="count" 
+    #itemNum placeholder="修改的数量" />
     <div class="zhuyi">
-      <label>注意：全场包邮，货到付款</label>
+      <label></label>
     </div>
     <div class="buybutton">
-      <button class="layui-btn layui-btn-normal" (click)="save(itemNum.value); itemNum.value=''">确认购买</button>
+      <button class="layui-btn layui-btn-normal" 
+      (click)="saveAdd(itemNum.value); itemNum.value=''">确认增加</button>
+      <button class="layui-btn layui-btn-normal"
+        (click)="saveSub(itemNum.value); itemNum.value=''">确认减少</button>
     </div>
   </div>
 </div>

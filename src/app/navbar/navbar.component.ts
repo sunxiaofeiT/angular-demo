@@ -17,22 +17,22 @@ export class NavbarComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(){
+  ngOnInit() {
     const divLogin = document.getElementById('Login');
     const divLogout = document.getElementById('Logout');
     const divRegister = document.getElementById('Register');
-	const divItem = document.getElementById('Item');
+    const divItem = document.getElementById('Item');
     this.managerId = -1;
-    if(localStorage.getItem('managerId') !== null){
-     //已登录
-     divLogin.style.display = 'none';
-     divRegister.style.display='none';
-	 divItem.style.display='none';
-     
-     this.managerId = <number><any>localStorage.getItem('managerId');
+    if (localStorage.getItem('managerId') !== null) {
+      //已登录
+      divLogin.style.display = 'none';
+      divRegister.style.display = 'none';
+      divItem.style.display = 'none';
+
+      this.managerId = <number><any>localStorage.getItem('managerId');
 
     }
-    else{
+    else {
       //未登录
       divLogout.style.display = 'none';
     }
@@ -41,6 +41,6 @@ export class NavbarComponent implements OnInit {
   logout() {
     localStorage.removeItem('managerId');
     this.managerId = -1;
-    location.reload();
+    location.replace("/item");
   }
 }
