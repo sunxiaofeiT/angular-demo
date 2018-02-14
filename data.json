@@ -34,7 +34,7 @@
       "desc": "机械手鼠标，非常好用",
       "ownerId": "1",
       "price": 200,
-      "count": 40
+      "count": 50
     },
     {
       "id": 5,
@@ -43,7 +43,7 @@
       "desc": "非常顺畅，能用3年，用过的人都说好",
       "ownerId": "1",
       "price": 26,
-      "count": 50
+      "count": 30
     },
     {
       "id": 6,
@@ -58,7 +58,7 @@
       "id": 7,
       "name": "牙刷",
       "desc": "无",
-      "count": "12",
+      "count": 27,
       "price": "5",
       "classification": "日用品",
       "ownerId": 1
