@@ -20,7 +20,7 @@ import { Item } from '../domain/item';
 
 @Injectable()
 export class ItemService {
-  private api_url = 'http://localhost:3000/items';
+  private api_url = 'http://123.206.227.133:3000/items';
   private headers = new Headers({ 'Content-Type': 'application/json' });
 
   constructor(private http: Http) { }

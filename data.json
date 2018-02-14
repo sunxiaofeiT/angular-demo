@@ -7,7 +7,7 @@
       "desc": "名牌",
       "ownerId": "1",
       "price": 20,
-      "count": 100
+      "count": 95
     },
     {
       "id": 2,
@@ -58,9 +58,18 @@
       "id": 7,
       "name": "牙刷",
       "desc": "无",
-      "count": 27,
+      "count": 49,
       "price": "5",
       "classification": "日用品",
+      "ownerId": 1
+    },
+    {
+      "id": 8,
+      "name": "大衣外套",
+      "desc": "这是一个限量版的大衣",
+      "count": 8,
+      "price": "1992",
+      "classification": "衣服",
       "ownerId": 1
     }
   ],

@@ -42,5 +42,6 @@ export class NavbarComponent implements OnInit {
     localStorage.removeItem('managerId');
     this.managerId = -1;
     location.replace("/item");
+    // location.reload();
   }
 }

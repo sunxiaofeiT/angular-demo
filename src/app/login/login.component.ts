@@ -33,7 +33,8 @@ export class LoginComponent implements OnInit {
         if(!auth.hasError){
           this.router.navigate([redirectUrl]);
           localStorage.removeItem('redirectUrl');
-          location.reload();
+          // location.reload();
+          location.replace('/add-item');
         } else {
           this.auth = Object.assign({}, auth);
         }

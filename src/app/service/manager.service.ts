@@ -19,7 +19,7 @@ import { AnimationStaggerMetadata } from '@angular/core/src/animation/dsl';
 @Injectable()
 export class ManagerService {
 
-  private api_url = 'http://localhost:3000/managers';
+  private api_url = 'http://123.206.227.133:3000/managers';
   private headers = new Headers({ 'Content-Type': 'application/json' });
 
   constructor(private http: Http) { }

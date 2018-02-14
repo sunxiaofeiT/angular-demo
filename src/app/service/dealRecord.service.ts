@@ -17,7 +17,7 @@ import { DealRecord } from '../domain/dealrecord';
 
 @Injectable()
 export class DealRecordService {
-  private api_url = 'http://localhost:3000/dealRecords';
+  private api_url = 'http://123.206.227.133:3000/dealRecords';
   private headers = new Headers({ 'Content-Type': 'application/json' });
 
   constructor(private http: Http) { }
