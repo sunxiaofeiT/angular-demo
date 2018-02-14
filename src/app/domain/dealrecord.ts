@@ -8,5 +8,6 @@
 export class DealRecord {
     id: number;
     iid: number;
+    itemName: string;
     buyerName: string;
 }

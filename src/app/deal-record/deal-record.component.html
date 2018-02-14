@@ -2,16 +2,15 @@
 <div>
   <label>交易记录</label>
   <input #itemName />
-
-  <button (click)="addDealRecord(ItemName.value,buyerName.value); itemName.value='';buyerName=''">
+  <!-- <button (click)="addDealRecord(ItemName.value,buyerName.value); itemName.value='';buyerName=''">
     Add
-  </button>
+  </button> -->
 </div>
 <ul class="dealRecords">
   <li *ngFor="let dealRecord of dealRecords" [class.selected]="dealRecord === selectedDealRecord">
     <span class="badge">{{dealRecord.id}}</span>
     <span class="item">物品：{{dealRecord.itemName}}</span>
-    <span class="buyer" >购买人：{{dealRecord.buyerName}}</span>
+    <span class="buyer">购买人：{{dealRecord.buyerName}}</span>
     <button class="delete" (click)="deleteDealRecord(dealRecord); $event.stopPropagation()">x</button>
   </li>
-</ul>
+</ul> 

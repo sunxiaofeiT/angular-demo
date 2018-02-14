@@ -18,6 +18,8 @@ export class DealRecordComponent implements OnInit {
 
   dealRecords: DealRecord[];
   selectedDealRecord: DealRecord;
+  itemName: string;
+  buyerName: string;
 
   constructor(
     private dealRecordService: DealRecordService

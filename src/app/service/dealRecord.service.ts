@@ -13,7 +13,7 @@ import { Http, Headers, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 //import class
-import { DealRecord } from '../domain/dealRecord';
+import { DealRecord } from '../domain/dealrecord';
 
 @Injectable()
 export class DealRecordService {
