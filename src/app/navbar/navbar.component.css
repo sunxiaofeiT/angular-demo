@@ -1,4 +1,4 @@
-.navbardiv {
+/* .navbardiv {
     float: left;
     margin-left: 30em;
     margin-top: -45px;
@@ -27,4 +27,16 @@ nav ul li a:hover {
 
 nav ul li a.active {
   color: #5FB878;
-} 
+}  */
+
+#logo {
+  color: #1E9FFF;
+  padding-right: 0.5em;
+}
+#logo p {
+  font-size: 20px;
+}
+
+.navbardiv ul li a {
+  font-size: 18px;
+}

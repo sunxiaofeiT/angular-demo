@@ -17,7 +17,6 @@ button.delete {
   margin-right: .8em;
 }
 .items {
-  margin-top: 2em;
   list-style-type: none;
   padding: 0;
   width: 80em;
@@ -29,6 +28,7 @@ button.delete {
   background-color: #EEE;
   border: 1px solid black;
   margin-left: 3em;
+  margin-top: 2em;
   padding-left: 10px;
   padding-top: 10px;
   height: 5em;

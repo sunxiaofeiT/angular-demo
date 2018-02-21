@@ -1,10 +1,21 @@
-<div class="profilecomponent">
-  <nav>
-    <button class="layui-btn" routerLink="/add-item" routerLinkActive="active" id="addItem">增加商品</button>
-    <button class="layui-btn" routerLink="/my-item-list" routerLinkActive="active" id="MyItem">已有商品</button>
-    <button class="layui-btn" routerLink="/profile-detail" routerLinkActive="active" id="ProfileDetail">个人信息修改</button>
-  </nav>
+<div class="layui-container">
+<div class="layui-row">
+<div class="layui-col-md6 layui-col-md-offset1 layui-col-sm8 layui-col-sm-offset1 layui-col-xs12">
+
+  <div class="profilecomponent">
+    <nav>
+      <button class="layui-btn" routerLink="/add-item" routerLinkActive="active" id="addItem">增加商品</button>
+      <button class="layui-btn" routerLink="/my-item-list" routerLinkActive="active" id="MyItem">已有商品</button>
+      <button class="layui-btn" routerLink="/profile-detail" routerLinkActive="active" id="ProfileDetail">个人信息修改</button>
+    </nav>
+  </div>
+  
 </div>
+</div>
+</div>
+
+<br />
+<br />
 
 <div>
   <router-outlet></router-outlet>

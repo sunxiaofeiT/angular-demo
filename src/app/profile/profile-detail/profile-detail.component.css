@@ -14,14 +14,11 @@ label {
   }
   .profilemessage {
     text-align: center;
-    margin-top: 4em;
+    width: 100%;
   }
-.message {
-  margin-top: 4em;
-}
 
 #profilemessbtn {
-  margin-top: 6em;
+  margin-top: 3em;
   width: 20em;
   height: 3em;
 }

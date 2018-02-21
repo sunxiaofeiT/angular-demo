@@ -1,29 +1,24 @@
-label {
-  display: inline-block;
-  width: 5em;
-  margin: .5em 0;
+.items label {
+  font-size: 1.5em;
+}
+.items label {
   color: #607D8B;
-  font-weight: bold;
+  font-size: 20px;
 }
-input {
+
+.items {
+  margin-top: 1em;
+}
+
+.items input{
   height: 2em;
-  font-size: 1em;
-  padding-left: .4em;
+  width: 100%;
+  border: 1px solid #1E9FFF;
+  border-radius: 5px;
+  font-size: 18px;
 }
-button {
-  margin-top: 20px;
-  font-family: Arial;
-  background-color: #eee;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer; cursor: hand;
-}
-button:hover {
-  background-color: #cfd8dc;
-}
-button:disabled {
-  background-color: #eee;
-  color: #ccc; 
-  cursor: auto;
+
+.item-button {
+  width: 48.5%;
+  margin-top: 3em;
 }

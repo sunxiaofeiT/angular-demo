@@ -14,9 +14,8 @@ label {
 }
 input {
   height: 2em;
-  width: 20em;
+  width: 100%;
   font-size: 1em;
-  padding-left: .4em;
 }
 
 fieldset {
