@@ -1,0 +1,24 @@
+.items label {
+  font-size: 1.5em;
+}
+.items label {
+  color: #607D8B;
+  font-size: 20px;
+}
+
+.items {
+  margin-top: 1em;
+}
+
+.items input{
+  height: 2em;
+  width: 100%;
+  border: 1px solid #1E9FFF;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.item-button {
+  width: 48.5%;
+  margin-top: 3em;
+}

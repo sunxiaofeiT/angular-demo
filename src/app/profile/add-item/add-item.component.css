@@ -1,0 +1,15 @@
+
+.additemcomponent label{
+    font-size: 20px;
+    width: 30%;
+}
+.additemcomponent input {
+    height: 3em;
+    width: 80%;
+    border: 1px solid #1E9FFF;
+    border-radius: 5px;
+}
+.additemcomponent button {
+    margin-top: 3em;
+    width: 100%;
+}
