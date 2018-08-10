@@ -5,6 +5,7 @@
  */
 
 export class Manager {
+    objectId: string;
     id: number;
     username: string;
     password: string;

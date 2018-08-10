@@ -47,7 +47,7 @@ export class MyItemListComponent implements OnInit {
 
   deleteItem(item: Item): void {
     this.itemService
-        .deleteItemById(item.id)
+        .deleteItem(item)
         .then(() => {
           this.items = this.items.filter(h => h !== item);
           if (this.selectedItem === item) { this.selectedItem = null; }

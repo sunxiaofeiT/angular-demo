@@ -1,5 +1,5 @@
 /**
- * @author 
+ * @author sunpengfei
  * @component login
  * @desc manager登录组件 （原为user登录界面）
  */

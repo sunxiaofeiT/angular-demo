@@ -6,8 +6,9 @@
  */
 
 export class DealRecord {
+    objectId: string;
     id: number;
     iid: number;
     itemName: string;
-    buyerName: string;
+    buyerName: string; 
 }

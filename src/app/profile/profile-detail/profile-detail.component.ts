@@ -40,8 +40,12 @@ export class ProfileDetailComponent implements OnInit {
   }
 
   save(): void{
-    this.managerService.updateManager(this.manager);
-    alert('修改成功');
+    this.managerService.updateManager(this.manager)
+    .then(
+      () => {
+        alert('修改成功');
+      }
+    );
   }
 
 }

@@ -17,8 +17,13 @@ import { DealRecord } from '../domain/dealrecord';
 
 @Injectable()
 export class DealRecordService {
-  private api_url = 'http://123.206.227.133:3000/dealRecords';
-  private headers = new Headers({ 'Content-Type': 'application/json' });
+  // private api_url = 'http://123.206.227.133:3000/dealRecords';
+  private api_url = 'http://api.bmob.cn/1/classes/dealRecord';
+  private headers = new Headers({ 
+    'Content-Type': 'application/json',
+    'X-Bmob-Application-Id': '1d87d439149c0552749458257c12213f',
+    'X-Bmob-REST-API-Key': '299aa97d12089144229033db7b8e8176',
+  });
 
   constructor(private http: Http) { }
 
@@ -27,7 +32,7 @@ export class DealRecordService {
     const url = `${this.api_url}`;
     return this.http.get(url, { headers: this.headers })
       .toPromise()
-      .then(res => res.json() as DealRecord[])
+      .then(res => res.json().results as DealRecord[])
       .catch(this.handleError);
   }
 
@@ -40,13 +45,13 @@ export class DealRecordService {
     return this.http
       .post(url, JSON.stringify(dealRecord), { headers: this.headers })
       .toPromise()
-      .then(res => res.json() as DealRecord)
+      .then(res => res.json().results as DealRecord)
       .catch(this.handleError);
   }
 
   //删除某个dealRecord
   deleteDealRecord(dealRecord: DealRecord): Promise<void> {
-    const url = `${this.api_url}/${dealRecord.id}`;
+    const url = `${this.api_url}/${dealRecord.objectId}`;
     return this.http.delete(url, { headers: this.headers })
       .toPromise()
       .then(() => null)

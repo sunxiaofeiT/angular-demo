@@ -20,6 +20,7 @@ export class AddItemComponent implements OnInit {
 
   items: Item[];
   item: Item = {
+    objectId: null,
     id: 0,
     name: '',
     desc: '',
@@ -34,11 +35,11 @@ export class AddItemComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.itemService.getItems()
-      .then(items => {
-        this.items = items,
-        this.item.id = this.items[this.items.length-1].id + 1;
-      });
+    // this.itemService.getItems()
+    //   .then(items => {
+    //     this.items = items,
+    //       this.item.id = this.items[this.items.length - 1].id + 1;
+    //   });
   }
 
   addItem(name: string, price: number, count: number, desc: string, classification: string) {
@@ -51,8 +52,12 @@ export class AddItemComponent implements OnInit {
       this.item.count = count;
       this.item.classification = classification;
       this.item.price = price;
-      this.itemService.createItem(this.item);
-      alert('增加商品成功！');
+      this.itemService.createItem(this.item).then(
+        () => {
+          alert('增加商品成功！');
+          location.replace('/my-item-list');
+        }
+      );
     }
   }
 

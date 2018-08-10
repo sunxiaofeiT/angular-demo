@@ -1,4 +1,5 @@
 export class Item {
+    objectId: string;
     id: number;
     name: string;
     desc: string;
