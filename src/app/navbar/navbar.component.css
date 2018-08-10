@@ -1,42 +1,12 @@
-/* .navbardiv {
-    float: left;
-    margin-left: 30em;
-    margin-top: -45px;
-}
-.navbardiv ul li {
-    display: inline;
-}
-.navbardiv ul li a {
-    float: left;
-    margin-left:20px;
-    font-size: 20px;
-    text-align: center;
-    color: #1E9FFF;
-    text-decoration: none;
-    font-family: Tahoma;
-    outline: none;
-}
-
-.navbardiv a:visited,a:link {
-  color: #1E9FFF;
-}
-
-nav ul li a:hover {
-  color: #5FB878;
-}
-
-nav ul li a.active {
-  color: #5FB878;
-}  */
-
 #logo {
   color: #1E9FFF;
-  padding-right: 0.5em;
+  margin-left: 20px;
 }
+
 #logo p {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .navbardiv ul li a {
-  font-size: 18px;
+  font-size: 14px;
 }

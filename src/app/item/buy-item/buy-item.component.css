@@ -1,18 +1,14 @@
-.innerbuydiv {
-    font-size: 15px;
-    text-align: center;
+.add-button, .de-button{
+    border-radius: 4px;
+    width: 100%;
 }
-.innerbuydiv .buytext {
-    margin-top: 1em;
-    font-size: 30px; 
-}
-.zhuyi {
-    margin-top: 1em;
-}
-.innerbuydiv .buybutton {
-    margin-top: 4em;
-}
-
-.innerbuydiv .buybutton button{
-    width: 14em;
+/*  */
+.change-number-input {
+    height: 38px;
+    width: auto;
+    line-height: 1.3;
+    border: 1px solid #e3e3e3e3;
+    background-color: #fff;
+    border-radius: 2px;
+    padding-left: 10px;
 }

@@ -1,33 +1,36 @@
-label {
-  display: inline-block;
-  width: 10em;
-  color: #607D8B;
-  font-size: 15px;
-}
-
 .mark{
-    display: inline-block;
-    width: 6em;
-    margin: .5em 0;
     color: #607D8B;
     font-weight: bold;
-}
-input {
-  height: 2em;
-  width: 100%;
-  font-size: 1em;
-}
-
-fieldset {
-  border: none;
-}
-.brdiv {
-  height:5em;
-}
-.button {
-  text-align: center;
 }
 .button button {
   width:100%;
   border-radius: 4px;
+  text-align: center;
+  margin-top: 20px;
+}
+.fieldset {
+  border: none;
+  margin-top: 20px;
+}
+/* layui 自定义样式 */
+.layui-input-block {
+  margin-left: 65px;
+}
+.layui-form-label {
+  width: auto;
+  padding-left: 0px;
+}
+/* 提示信息样式 */
+.remind-info {
+  font-size: 12px;
+  line-height: 14px;
+  height: 14px;
+  color: #607D8B;
+  margin-top:4px;
+}
+/* 提示帐号 */
+.username-password {
+  text-align: center;
+  font-size: 14px;
+  color: #e3e3e3;
 }

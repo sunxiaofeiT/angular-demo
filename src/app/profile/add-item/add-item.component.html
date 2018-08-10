@@ -1,43 +1,47 @@
-<div class="layui-anim layui-anim-up additemcomponent">
-    <div class="layui-container">
-        <div class="layui-row">
-            <div class="layui-col-md6 layui-col-md-offset3">
-
-                <div>
-                    <!-- id不需要管理员定义，自动按顺序添加 -->
-                    <!-- <input [(ngModel)]="item.id"/> -->
-                    <br>
-                    <div>
-                        <label>商品名称：</label>
-                        <input type="text" placeholder=" 名称" #namer />
-                    </div>
-                    <br>
-                    <div>
-                        <label>商品价格：</label>
-                        <input type="number" placeholder=" 单价" #pricer />
-                    </div>
-                    <br>
-                    <div>
-                        <label>商品库存：</label>
-                        <input type="number" placeholder=" 数量" #countr />
-                    </div>
-                    <br>
-                    <div>
-                        <label>商品描述：</label>
-                        <input type="text" placeholder=" 介绍" #descr />
-                    </div>
-                    <br>
-                    <div>
-                        <label>商品分类：</label>
-                        <input type="text" placeholder=" 类别" #classificationr />
-                    </div>
-                    <br>
-                    <div>
-                        <button class="layui-btn layui-btn-normal" (click)="addItem(namer.value,pricer.value,countr.value,descr.value,classificationr.value)">确认增加此商品</button>
+<div class="layui-anim layui-anim-fadein additemcomponent">
+    <div class="layui-row">
+        <div class="layui-col-md6 layui-col-md-offset3 layui-col-xs12">
+            <form class="layui-form">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">商品名称：</label>
+                    <div class="layui-input-block">
+                        <input class="layui-input" type="text" placeholder=" 名称" #namer />
                     </div>
                 </div>
+       
+                <div class="layui-form-item">
+                    <label class="layui-form-label">商品价格：</label>
+                    <div class="layui-input-block">
+                        <input class="layui-input" type="number" placeholder=" 单价" #pricer />
+                    </div>
+                </div>
+       
+                <div class="layui-form-item">
+                    <label class="layui-form-label">商品库存：</label>
+                    <div class="layui-input-block">
+                        <input class="layui-input" type="number" placeholder=" 数量" #countr />
+                    </div>
+                </div>
+       
+                <div class="layui-form-item">
+                    <label class="layui-form-label">商品描述：</label>
+                    <div class="layui-input-block">
+                        <input class="layui-input" type="text" placeholder="介绍" #descr />
+                    </div>
+                </div>
+       
+                <div class="layui-form-item">
+                    <label class="layui-form-label">商品分类：</label>
+                    <div class="layui-input-block">
+                        <input class="layui-input" type="text" placeholder="类别" #classificationr />
+                    </div>
+                </div>
+       
+                <div class="layui-form-item form-button">
+                    <button class="layui-btn layui-btn-normal" (click)="addItem(namer.value,pricer.value,countr.value,descr.value,classificationr.value)">确认增加此商品</button>
+                </div>
+            </form>
 
-            </div>
         </div>
     </div>
 </div>

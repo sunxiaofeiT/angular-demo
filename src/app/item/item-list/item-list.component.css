@@ -6,28 +6,25 @@
 .each {
   padding-top: 2em;
   text-align: center;
-  z-index: -1;
+  /* z-index: -1; */
 }
 .items {
-  margin: 0 0 .5em 0;
   list-style-type: none;
+  margin-top: 10px;
   padding: 0;
-  width: 80em;
 }
 
 .items li {
   cursor: pointer;
-  float: left;
   background-color: #EEE;
   color: #393D49;
   border: 1px solid #1E9FFF;
-  /* margin: .5em;
-  padding: .3em 0; */
-  margin-left: 4em;
-  margin-top: 2em;
-  height: 5em;
-  width: 20em;
   border-radius: 4px;
+  height: 5em;
+  margin-top: 2em;
+  /* float: left;
+  margin-left: 4em;
+  width: 20em; */
 }
 
 .items li:hover {

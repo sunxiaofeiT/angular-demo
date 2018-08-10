@@ -1,3 +1,8 @@
-.profilecomponent nav button:active {
+.active {
     background-color: #1E9FFF;
+}
+/* button div */
+.button-div {
+    margin-left: auto;
+    margin-right: auto;
 }

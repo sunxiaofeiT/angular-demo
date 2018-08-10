@@ -1,15 +1,19 @@
-
-.additemcomponent label{
-    font-size: 20px;
-    width: 30%;
+.additemcomponent {
+    margin-top: 20px;
 }
 .additemcomponent input {
-    height: 3em;
-    width: 80%;
+    height: 30px;
     border: 1px solid #1E9FFF;
-    border-radius: 5px;
+    border-radius: 4px;
 }
 .additemcomponent button {
-    margin-top: 3em;
     width: 100%;
+}
+/*  */
+.layui-input-block{
+    padding-right: 20px;
+}
+
+.form-button {
+    padding: 0px 20px;
 }
