@@ -4,7 +4,7 @@
 }
 
 #search-component span{
-  font-size: 21px;
+  font-size: 14px;
   color: #393D49;
 }
 
@@ -30,7 +30,6 @@
   }
    
   #search-box{
-    width: 300px;
     height: 35px;
     border-radius: 5px;
     border: 1px solid #d2d2d2;

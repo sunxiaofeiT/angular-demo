@@ -61,7 +61,7 @@ export class ItemService {
   searchItem(term: string): Observable<Item[]> {
     return this.http
       // .get(`${this.api_url}?name_like=${term}`)
-      .get(`${this.api_url}?where={"name":"${term}"}`)
+      .get(`${this.api_url}?where={"name":"${term}"}`, {headers: this.headers})
       .map(response => response.json().results as Item[]);
   }
 

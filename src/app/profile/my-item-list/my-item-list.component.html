@@ -1,17 +1,11 @@
-<div class="layui-container">
-  <div class="layui-row"> 
-  <div clas="layui-col-md6 layui-col-md-offset3 layui-col-sm8 layui-col-sm-offset2">
-    
-      <ul class="items flaotitem layui-anim layui-anim-up">
-        <li *ngFor="let item of items" (click)="onSelect(item)" [class.selected]="item === selectedItem">
-          <span>{{item.id}}</span>
-          <span>{{item.name}}</span>
-          <button class="delete" (click)="deleteItem(item); $event.stopPropagation()">
-            <i class="layui-icon">&#xe640;</i>
-          </button>
-        </li>
-      </ul>
-
+<ul class="items flaotitem layui-anim layui-anim-fadein layui-row layui-col-space20">
+  <li class="layui-col-md3 layui-col-sm6 layui-col-xs12" *ngFor="let item of items" (click)="onSelect(item)" [class.selected]="item === selectedItem">
+    <div>
+      <span>{{item.id}}</span>
+      <span>{{item.name}}</span>
+      <button class="delete" (click)="deleteItem(item); $event.stopPropagation()">
+      <i class="layui-icon">&#xe640;</i>
+      </button>
     </div>
-  </div>
-</div>
+  </li>
+</ul>

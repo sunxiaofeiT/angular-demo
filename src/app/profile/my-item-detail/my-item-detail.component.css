@@ -1,24 +1,22 @@
-.items label {
-  font-size: 1.5em;
-}
-.items label {
-  color: #607D8B;
-  font-size: 20px;
+/* item detil container */
+.item-detail {
+  padding: 10px;
 }
 
-.items {
-  margin-top: 1em;
+.layui-form-label {
+  width: 70px;
+  padding: 9px 0;
+}
+/* form input */ 
+.layui-input-block {
+  margin-left: 85px;
 }
 
-.items input{
-  height: 2em;
+/* button */
+.goback-button {
+  margin-top: 15px;
+  margin-bottom: 10 px;
+}
+.form-button {
   width: 100%;
-  border: 1px solid #1E9FFF;
-  border-radius: 5px;
-  font-size: 18px;
-}
-
-.item-button {
-  width: 48.5%;
-  margin-top: 3em;
 }
