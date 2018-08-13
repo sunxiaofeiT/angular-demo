@@ -1,10 +1,7 @@
-<div id="search-component">
-  <span>搜索商品：</span>
-  <input class="layui-input" #searchBox id="search-box" (keyup)="search(searchBox.value)" />
-  <div>
-    <div *ngFor="let item of items | async"
-         (click)="gotoDetail(item)" class="search-result" >
-      {{item.name}}
-    </div>
+<div id="search-component" class="layui-col-md4 layui-col-md-offset4 layui-col-sm8 layui-col-sm-offset2 layui-col-xs12">
+  <!-- <label class="layui-form-label">搜索商品：</label> -->
+  <input class="layui-input" #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="输入以搜索..." />
+  <div *ngFor="let item of items | async" (click)="gotoDetail(item)" class="search-result">
+    {{item.name}}
   </div>
 </div>

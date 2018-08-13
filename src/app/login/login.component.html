@@ -16,10 +16,12 @@
       </div>
 
       <div class="layui-form-item">
-        <label class="mark layui-form-label">密&nbsp;&nbsp;&nbsp;&nbsp;码: </label>
-        <div class="layui-input-block">
-          <input class="layui-input" name="password" type="password" [(ngModel)]="password" #passwordRef="ngModel" required>
-          <label class="remind-info" *ngIf="passwordRef.errors?.required">请输入密码</label>
+        <div class="layui-col-md4 layui-col-md-offset4">
+          <label class="mark layui-form-label">密&nbsp;&nbsp;&nbsp;&nbsp;码: </label>
+          <div class="layui-input-block">
+            <input class="layui-input" name="password" type="password" [(ngModel)]="password" #passwordRef="ngModel" required>
+            <label class="remind-info" *ngIf="passwordRef.errors?.required">请输入密码</label>
+          </div>
         </div>
       </div>
 

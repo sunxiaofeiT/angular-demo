@@ -1,18 +1,18 @@
 <div class="layui-row layui-col-space10">
-  <!--  用户不需要填写商品ID，系统自动判定为当前详情的商品
-      <labe>商品编号：</labe>
-      <input #itemId [(ngModule)]="itemId" placeholder="商品编号"> 
-    -->
   <div class="layui-col-md4 layui-col-md-offset2 layui-col-xs12">
-    <label classs="layui-form-label">填写修改数量：</label>
-    <input class="layui-form-input change-number-input" type="text" [(ngModel)]="count" #itemNum placeholder="修改的数量" />
+    <div class="layui-form-item">
+      <label class="layui-form-label">填写修改数量：</label>
+      <div class="layui-input-block">
+        <input class="layui-input" type="text" [(ngModel)]="count" #itemNum placeholder="修改的数量" />
+      </div>
+    </div>
   </div>
 
-    <div class="layui-col-md2 layui-col-xs12">
-      <button class="add-button layui-btn layui-btn-normal" (click)="saveAdd(itemNum.value); itemNum.value=''">确认增加</button>
-    </div>
-    <div class="layui-col-md2 layui-col-xs12">
-      <button class="de-button layui-btn layui-btn-normal" (click)="saveSub(itemNum.value); itemNum.value=''">确认减少</button>
-    </div>
+  <div class="layui-col-md2 layui-col-xs12">
+    <button class="add-button layui-btn layui-btn-normal" (click)="saveAdd(itemNum.value); itemNum.value=''">确认增加</button>
+  </div>
+  <div class="layui-col-md2 layui-col-xs12">
+    <button class="de-button layui-btn layui-btn-normal" (click)="saveSub(itemNum.value); itemNum.value=''">确认减少</button>
+  </div>
 
 </div>
