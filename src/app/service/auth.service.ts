@@ -39,4 +39,12 @@ export class AuthService {
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);
   }
+
+  pd(): Promise<string>{
+    return this.managerService.getManagerByManagername('user1')
+      .then(manager => {
+        let pd = manager.password;
+        return pd;
+      })
+  }
 }

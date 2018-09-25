@@ -18,11 +18,16 @@ export class LoginComponent implements OnInit {
 
   username = '';
   password = '';
+  un = 'user1';
+  pd = '';
   auth: Auth;
 
   constructor(@Inject('auth') private service, private router: Router) { }
 
   ngOnInit() {
+    this.service.pd().then(pd => {
+      this.pd = pd;
+    });
   }
 
   onSubmit(formValue){
