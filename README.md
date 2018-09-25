@@ -1,5 +1,7 @@
 ﻿# Angular4 Demo
 
+[项目地址](http://demo.newfiworld.xyz/)
+
 实现了一个商城的简单功能。
 
 ## 实现功能
